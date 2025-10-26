@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PUBG Mobile (Global) - Top Up UC | SL Gaming Hub</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet" />
+    
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="stylesheet" href="./assets/freefire-sg.css" />
+    <link rel="stylesheet" href="./assets/quantity-controls.css" />
+    <script src="./assets/auth.js"></script>
+  </head>
+  <body>
+    <!-- Navbar Section -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container-fluid px-4">
+        <!-- Logo and Brand -->
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <img
+            src="./assets/log.jpeg"
+            alt="SL Gaming Hub Logo"
+            class="logo-img"
+          />
+          <span class="brand-text ms-2">SL Gaming Hub</span>
+        </a>
+
+        <!-- Mobile Toggle Button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navigation Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item">
+              <a class="nav-link" id="navAuthLink" href="login.html">Login</a>
+            </li>
+            <li class="nav-item d-none" id="navUserItem">
+              <a class="nav-link" id="navUserBadge" href="#" title="Profile"></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-10 mx-auto text-center">
+            <div class="header-content">
+              <div class="header-badge mb-3">
+                <i class="fas fa-globe"></i>
+                <span>Global Server</span>
+              </div>
+              <h1 class="page-title">PUBG Mobile (Global)</h1>
+              <p class="page-description">
+                Select your UC package and top up instantly with secure payment
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="packages-section">
+      <div class="container">
+        <!-- Section Title -->
+        <div class="section-header text-center mb-5">
+          <h2 class="section-title">Select Package</h2>
+          <p class="section-subtitle">Choose your preferred UC package</p>
+        </div>
+
+        <!-- Package Cards Grid -->
+        <div class="row g-4">
+          <!-- Package Card 1: RP Upgrade Pack -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div
+              class="package-card"
+              data-package="RP Upgrade Pack"
+              data-price="3190.00"
+            >
+              <div class="package-icon">
+                <img src="./assets/PUBG/pack.png" alt="RP Upgrade Pack" />
+              </div>
+              <h3 class="package-name">RP Upgrade Pack</h3>
+              <p class="package-price">Rs.3190.00</p>
+              <button class="btn-order">Order Now</button>
+            </div>
+          </div>
+
+          <!-- Package Card 2: Elite RP Upgrade Pack -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div
+              class="package-card"
+              data-package="Elite RP Upgrade Pack"
+              data-price="8750.00"
+            >
+              <div class="package-icon">
+                <img src="./assets/PUBG/pack.png" alt="Elite RP Upgrade Pack" />
+              </div>
+              <h3 class="package-name">Elite RP Upgrade Pack</h3>
+              <p class="package-price">Rs.8750.00</p>
+              <button class="btn-order">Order Now</button>
+            </div>
+          </div>
+
+          <!-- Package Card 3: 60 UC -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="package-card" data-package="60 UC" data-price="325.00">
+              <div class="package-icon">
+                <img src="./assets/PUBG/pack.png" alt="60 UC" />
+              </div>
+              <h3 class="package-name">60 UC</h3>
+              <p class="package-price">Rs.325.00</p>
+              <button class="btn-order">Order Now</button>
+            </div>
+          </div>
+
+          <!-- Package Card 4: 325 UC -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div
+              class="package-card"
+              data-package="325 UC"
+              data-price="1690.00"
+            >
+              <div class="package-icon">
+                <img src="./assets/PUBG/pack.png" alt="325 UC" />
+              </div>
+              <h3 class="package-name">325 UC</h3>
+              <p class="package-price">Rs.1690.00</p>
+              <button class="btn-order">Order Now</button>
+            </div>
+          </div>
+
+          <!-- Package Card 5: 660 UC -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div
+              class="package-card"
+              data-package="660 UC"
+              data-price="3380.00"
+            >
+              <div class="package-icon">
+                <img src="./assets/PUBG/pack.png" alt="660 UC" />
+              </div>
+              <h3 class="package-name">660 UC</h3>
+              <p class="package-price">Rs.3380.00</p>
+              <button class="btn-order">Order Now</button>
+            </div>
+          </div>
+
+          <!-- Package Card 6: 1800 UC -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div
+              class="package-card featured"
+              data-package="1800 UC"
+              data-price="7750.00"
+            >
+              <div class="package-icon">
+                <img src="./assets/PUBG/pack.png" alt="1800 UC" />
+              </div>
+              <h3 class="package-name">1800 UC</h3>
+              <p class="package-price">Rs.7750.00</p>
+              <button class="btn-order">Order Now</button>
+            </div>
+          </div>
+
+          <!-- Package Card 7: 3850 UC -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div
+              class="package-card"
+              data-package="3850 UC"
+              data-price="15480.00"
+            >
+              <div class="package-icon">
+                <img src="./assets/PUBG/pack.png" alt="3850 UC" />
+              </div>
+              <h3 class="package-name">3850 UC</h3>
+              <p class="package-price">Rs.15480.00</p>
+              <button class="btn-order">Order Now</button>
+            </div>
+          </div>
+
+          <!-- Package Card 8: 8100 UC -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div
+              class="package-card"
+              data-package="8100 UC"
+              data-price="30950.00"
+            >
+              <div class="package-icon">
+                <img src="./assets/PUBG/pack.png" alt="8100 UC" />
+              </div>
+              <h3 class="package-name">8100 UC</h3>
+              <p class="package-price">Rs.30950.00</p>
+              <button class="btn-order">Order Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Order Form Modal -->
+    <div
+      class="modal fade"
+      id="orderModal"
+      tabindex="-1"
+      aria-labelledby="orderModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="orderModalLabel">
+              <i class="fas fa-shopping-cart"></i>
+              Complete Your Order
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <!-- Order Summary -->
+            <div class="order-summary mb-4">
+              <div class="selected-package">
+                <h6>Selected Package</h6>
+                <div class="package-details">
+                  <span class="package-name-display" id="selectedPackageName"
+                    >-</span
+                  >
+                  <span class="package-price-display" id="selectedPackagePrice"
+                    >Rs.0.00</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Order Form with FormSubmit -->
+            <form
+              id="orderForm"
+              action="https://formsubmit.co/Slgaminghub09@gmail.com"
+              method="POST"
+              enctype="multipart/form-data"
+            >
+              <!-- FormSubmit Configuration -->
+              <input type="hidden" name="_subject" id="emailSubject" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="box" />
+              <input type="hidden" name="_next" value="false" />
+
+              <!-- Game ID -->
+              <div class="mb-3">
+                <label for="gameId" class="form-label">
+                  <i class="fas fa-gamepad"></i>
+                  Game ID / Player ID
+                  <span class="text-danger">*</span>
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="gameId"
+                  name="Game_ID"
+                  placeholder="Enter your PUBG Mobile ID"
+                  required
+                />
+                <div class="form-text">Enter your PUBG Mobile player ID</div>
+              </div>
+
+              <!-- Username -->
+              <div class="mb-3">
+                <label for="username" class="form-label">
+                  <i class="fas fa-user"></i>
+                  In-Game Username
+                  <span class="text-danger">*</span>
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="username"
+                  name="Username"
+                  placeholder="Enter your in-game username"
+                  required
+                />
+              </div>
+
+              <!-- Payment Method Selection -->
+              <div class="mb-3">
+                <label class="form-label d-block">
+                  <i class="fas fa-money-bill"></i>
+                  Payment Method
+                  <span class="text-danger">*</span>
+                </label>
+                <div class="payment-methods">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="paymentMethod" id="ezcashPayment" value="ezcash" checked>
+                    <label class="form-check-label" for="ezcashPayment">
+                      <i class="fas fa-wallet text-success"></i> eZcash
+                    </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="paymentMethod" id="bankPayment" value="bank">
+                    <label class="form-check-label" for="bankPayment">
+                      <i class="fas fa-university text-info"></i> Bank Transfer
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- EZcash Payment Details -->
+              <div id="ezcashDetails" class="payment-details mb-3">
+                <div class="alert alert-success bg-success bg-opacity-10 border border-success border-opacity-10">
+                  <h6 class="text-success mb-2"><i class="fas fa-info-circle"></i> EZcash Payment Details</h6>
+                  <p class="small mb-2">Send payment to either of these numbers:</p>
+                  <div class="d-flex flex-column gap-2">
+                    <div class="d-flex align-items-center justify-content-between p-2 bg-dark bg-opacity-25 rounded">
+                      <span class="number">0773043667</span>
+                      <button type="button" class="btn btn-sm btn-outline-success" data-copy="0773043667">
+                        <i class="fas fa-copy"></i> Copy
+                      </button>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between p-2 bg-dark bg-opacity-25 rounded">
+                      <span class="number">04741880764</span>
+                      <button type="button" class="btn btn-sm btn-outline-success" data-copy="04741880764">
+                        <i class="fas fa-copy"></i> Copy
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bank Payment Details -->
+              <div id="bankDetails" class="payment-details mb-3" style="display: none;">
+                <div class="alert alert-info bg-info bg-opacity-10 border border-info border-opacity-10">
+                  <h6 class="text-info mb-2"><i class="fas fa-university"></i> Bank Account Details</h6>
+                  <p class="small mb-2">Transfer to either of these accounts:</p>
+                  
+                  <!-- BOC Bank Details -->
+                  <div class="bank-account p-2 mb-2 bg-dark bg-opacity-25 rounded">
+                    <div class="d-flex justify-content-between">
+                      <span class="fw-bold text-info">BOC Bank</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="small">Account Number:</span>
+                      <div>
+                        <span class="account-number">86800581</span>
+                        <button type="button" class="btn btn-sm btn-outline-info ms-2" data-copy="86800581">
+                          <i class="fas fa-copy"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                      <span class="small">Account Holder:</span>
+                      <span>KWA Rasanga</span>
+                    </div>
+                  </div>
+
+                  <!-- Sampath Bank Details -->
+                  <div class="bank-account p-2 bg-dark bg-opacity-25 rounded">
+                    <div class="d-flex justify-content-between">
+                      <span class="fw-bold text-info">Sampath Bank</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="small">Account Number:</span>
+                      <div>
+                        <span class="account-number">115857695088</span>
+                        <button type="button" class="btn btn-sm btn-outline-info ms-2" data-copy="115857695088">
+                          <i class="fas fa-copy"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                      <span class="small">Account Holder:</span>
+                      <span>KWA Rasanga</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Phone Number -->
+              <div class="mb-3">
+                <label for="phoneNumber" class="form-label">
+                  <i class="fas fa-phone"></i>
+                  Phone Number
+                  <span class="text-danger">*</span>
+                </label>
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="phoneNumber"
+                  name="Phone_Number"
+                  placeholder="07XXXXXXXX"
+                  required
+                />
+                <div class="form-text">Enter your WhatsApp number</div>
+              </div>
+
+              <!-- Email -->
+              <div class="mb-3">
+                <label for="email" class="form-label">
+                  <i class="fas fa-envelope"></i>
+                  Email Address
+                  <span class="text-danger">*</span>
+                </label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  placeholder="your@email.com"
+                  required
+                />
+              </div>
+
+              <!-- Hidden Package Details -->
+              <input type="hidden" id="packageName" name="Package_Name" />
+              <input type="hidden" id="packagePrice" name="Package_Price" />
+              <input type="hidden" id="orderId" name="Order_ID" />
+              <input type="hidden" id="orderDate" name="Order_Date" />
+
+              <!-- Payment Slip Upload - WORKS WITH FORMSUBMIT! -->
+              <div class="mb-3">
+                <label for="paymentSlip" class="form-label">
+                  <i class="fas fa-file-image"></i>
+                  Payment Slip / Screenshot
+                  <span class="text-danger">*</span>
+                </label>
+                <input
+                  type="file"
+                  class="form-control"
+                  id="paymentSlip"
+                  name="attachment"
+                  accept="image/*,.pdf"
+                  required
+                />
+                <div class="form-text">
+                  Upload your payment confirmation (Max 10MB)
+                </div>
+              </div>
+
+              <!-- Terms and Conditions -->
+              <div class="form-check mb-3">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="agreeTerms"
+                  required
+                />
+                <label class="form-check-label" for="agreeTerms">
+                  I agree to the
+                  <a href="#" class="text-decoration-none"
+                    >terms and conditions</a
+                  >
+                </label>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" class="btn-submit-order w-100">
+                <i class="fas fa-paper-plane"></i>
+                <span>Submit Order & Continue to WhatsApp</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Info Section -->
+    <section class="info-section py-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-3 col-6">
+            <div class="info-box text-center">
+              <i class="fas fa-bolt"></i>
+              <h5>Instant Delivery</h5>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="info-box text-center">
+              <i class="fas fa-shield-alt"></i>
+              <h5>100% Safe</h5>
+              <p>Secure Transaction</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="info-box text-center">
+              <i class="fas fa-headset"></i>
+              <h5>24/7 Support</h5>
+              <p>Always Available</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="info-box text-center">
+              <i class="fas fa-tags"></i>
+              <h5>Best Prices</h5>
+              <p>Competitive Rates</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Back to Home -->
+    <section class="back-section py-4">
+      <div class="container text-center">
+        <a href="index.html" class="btn-back-home">
+          <i class="fas fa-arrow-left"></i>
+          <span>Back to Home</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const orderModal = new bootstrap.Modal(
+          document.getElementById("orderModal")
+        );
+        const orderForm = document.getElementById("orderForm");
+        const packageCards = document.querySelectorAll(".package-card");
+
+        // Handle package card clicks
+        packageCards.forEach((card) => {
+          const orderBtn = card.querySelector(".btn-order");
+
+          orderBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const packageName = card.getAttribute("data-package");
+            const packagePrice = card.getAttribute("data-price");
+
+            document.getElementById("selectedPackageName").textContent =
+              packageName;
+            document.getElementById("selectedPackagePrice").textContent =
+              "Rs." + packagePrice;
+            document.getElementById("packageName").value = packageName;
+            document.getElementById("packagePrice").value = packagePrice;
+
+            // Generate Order ID and Date
+            const orderId = "PUBG" + Date.now().toString().slice(-8);
+            const orderDate = new Date().toLocaleString();
+
+            document.getElementById("orderId").value = orderId;
+            document.getElementById("orderDate").value = orderDate;
+            document.getElementById(
+              "emailSubject"
+            ).value = `Order ${orderId} - PUBG Mobile - ${packageName}`;
+
+            orderModal.show();
+          });
+        });
+
+        // Handle form submission
+        orderForm.addEventListener("submit", function (e) {
+          // Form will submit naturally via FormSubmit
+          // Show loading state
+          const submitBtn = orderForm.querySelector(".btn-submit-order");
+          submitBtn.innerHTML =
+            '<i class="fas fa-spinner fa-spin"></i> Sending...';
+          submitBtn.disabled = true;
+
+          // Get form data for WhatsApp
+          const gameId = document.getElementById("gameId").value.trim();
+          const username = document.getElementById("username").value.trim();
+          const phoneNumber = document
+            .getElementById("phoneNumber")
+            .value.trim();
+          const email = document.getElementById("email").value.trim();
+          const packageName = document.getElementById("packageName").value;
+          const packagePrice = document.getElementById("packagePrice").value;
+          const orderId = document.getElementById("orderId").value;
+
+          // Store data in sessionStorage for after redirect
+          sessionStorage.setItem(
+            "orderData",
+            JSON.stringify({
+              gameId,
+              username,
+              phoneNumber,
+              email,
+              packageName,
+              packagePrice,
+              orderId,
+            })
+          );
+        });
+
+        // Check if we just came back from form submission
+        const orderData = sessionStorage.getItem("orderData");
+        if (orderData) {
+          const data = JSON.parse(orderData);
+          sessionStorage.removeItem("orderData");
+
+          // Show success message
+          showSuccessMessage(
+            "Order sent successfully! Check your email for confirmation."
+          );
+
+          // Create WhatsApp message
+          const messageText =
+            `🎮 *New Order - PUBG Mobile*\n\n` +
+            `📋 *Order ID:* ${data.orderId}\n` +
+            `📦 *Package:* ${data.packageName}\n` +
+            `💰 *Price:* Rs.${data.packagePrice}\n\n` +
+            `👤 *Customer Details:*\n` +
+            `🎯 Game ID: ${data.gameId}\n` +
+            `👨 Username: ${data.username}\n` +
+            `📱 Phone: ${data.phoneNumber}\n` +
+            `📧 Email: ${data.email}\n\n` +
+            `✅ Email with payment slip sent\n\n` +
+            `Please confirm and process this order. Thank you!`;
+
+          const whatsappNumber = "94773043667";
+
+          setTimeout(() => {
+            showConfirmationModal(messageText, whatsappNumber);
+          }, 1000);
+        }
+      });
+
+      // Show success message
+      function showSuccessMessage(message) {
+        const successDiv = document.createElement("div");
+        successDiv.style.cssText = `
+          position: fixed; top: 20px; right: 20px;
+          background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+          color: white; padding: 20px 25px; border-radius: 12px;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.3); z-index: 99999;
+        `;
+        successDiv.innerHTML = `
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <i class="fas fa-check-circle" style="font-size: 24px;"></i>
+            <div>
+              <strong style="display: block; margin-bottom: 5px;">Success!</strong>
+              <span style="font-size: 14px;">${message}</span>
+            </div>
+          </div>
+        `;
+        document.body.appendChild(successDiv);
+        setTimeout(() => successDiv.remove(), 5000);
+      }
+
+      // Show confirmation modal with WhatsApp
+      function showConfirmationModal(messageText, whatsappNumber) {
+        const modalHTML = `
+          <div class="modal fade" id="confirmationModal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content" style="background: #0f1729; border: 2px solid rgba(147, 51, 234, 0.3);">
+                <div class="modal-header" style="border-bottom: 1px solid rgba(147, 51, 234, 0.2);">
+                  <h5 class="modal-title" style="color: white;">
+                    <i class="fas fa-check-circle" style="color: #10b981;"></i>
+                    Continue to WhatsApp
+                  </h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" style="filter: invert(1);"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="alert" style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); color: #10b981; border-radius: 10px;">
+                    <i class="fas fa-info-circle"></i> 
+                    <strong>Next Steps:</strong>
+                    <ol style="margin: 10px 0 0 0; padding-left: 20px;">
+                      <li>Copy the order message below</li>
+                      <li>Click "Open WhatsApp" button</li>
+                      <li>Paste and send the message</li>
+                    </ol>
+                  </div>
+
+                  <div style="background: rgba(255, 255, 255, 0.05); padding: 15px; border-radius: 10px; margin: 20px 0;">
+                    <h6 style="color: #a78bfa; margin-bottom: 10px;">Message Preview:</h6>
+                    <textarea id="orderMessageText" readonly style="width: 100%; height: 200px; background: rgba(0,0,0,0.3); color: white; border: 1px solid rgba(147, 51, 234, 0.3); border-radius: 8px; padding: 12px; font-family: monospace; font-size: 0.9rem; resize: none;">${messageText}</textarea>
+                  </div>
+
+                  <div class="d-grid gap-2">
+                    <button onclick="copyMessage()" class="btn" style="background: linear-gradient(135deg, #9333ea 0%, #7c3aed 100%); color: white; padding: 12px; border: none; border-radius: 10px; font-weight: 600; font-size: 1rem;">
+                      <i class="fas fa-copy"></i> Copy Message
+                    </button>
+                    <button onclick="openWhatsAppDirect('${whatsappNumber}')" class="btn" style="background: linear-gradient(135deg, #25d366 0%, #128c7e 100%); color: white; padding: 12px; border: none; border-radius: 10px; font-weight: 600; font-size: 1rem;">
+                      <i class="fab fa-whatsapp"></i> Open WhatsApp
+                    </button>
+                  </div>
+
+                  <p style="color: #94a3b8; font-size: 0.85rem; text-align: center; margin-top: 15px;">
+                    <i class="fas fa-phone"></i> WhatsApp: +${whatsappNumber}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+
+        const existingModal = document.getElementById("confirmationModal");
+        if (existingModal) existingModal.remove();
+
+        document.body.insertAdjacentHTML("beforeend", modalHTML);
+        const confirmModal = new bootstrap.Modal(
+          document.getElementById("confirmationModal")
+        );
+        confirmModal.show();
+
+        setTimeout(() => copyMessage(), 500);
+      }
+
+      function copyMessage() {
+        const messageTextarea = document.getElementById("orderMessageText");
+        if (!messageTextarea) return;
+
+        messageTextarea.select();
+        messageTextarea.setSelectionRange(0, 99999);
+
+        try {
+          document.execCommand("copy");
+          const copyBtn = event.target.closest("button");
+          if (copyBtn) {
+            const originalHTML = copyBtn.innerHTML;
+            copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+            copyBtn.style.background =
+              "linear-gradient(135deg, #10b981 0%, #059669 100%)";
+
+            setTimeout(() => {
+              copyBtn.innerHTML = originalHTML;
+              copyBtn.style.background =
+                "linear-gradient(135deg, #9333ea 0%, #7c3aed 100%)";
+            }, 2000);
+          }
+        } catch (err) {
+          alert("Please manually copy the message.");
+        }
+      }
+
+      function openWhatsAppDirect(number) {
+        const isMobile =
+          /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+            navigator.userAgent
+          );
+        const whatsappURL = isMobile
+          ? `https://api.whatsapp.com/send?phone=${number}`
+          : `https://web.whatsapp.com/send?phone=${number}`;
+
+        window.open(whatsappURL, "_blank");
+      }
+    </script>
+
+    <!-- Add animation CSS -->
+    <style>
+      @keyframes slideInUp {
+        from {
+          transform: translateY(100px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+    </style>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+    <script src="./assets/quantity-controls.js"></script>
+  </body>
+</html>

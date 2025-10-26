@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Free Fire (SG) - Top Up Diamonds | SL Gaming Hub</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="stylesheet" href="./assets/freefire-sg.css" />
+    <link rel="stylesheet" href="./assets/quantity-controls.css" />
+    <script src="./assets/auth.js"></script>
+  </head>
+  <body>
+    <!-- Navbar Section -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container-fluid px-4">
+        <!-- Logo and Brand -->
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <img
+            src="./assets/log.jpeg"
+            alt="SL Gaming Hub Logo"
+            class="logo-img"
+          />
+          <span class="brand-text ms-2">SL Gaming Hub</span>
+        </a>
+
+        <!-- Mobile Toggle Button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navigation Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item">
+              <a class="nav-link" id="navAuthLink" href="login.html">Login</a>
+            </li>
+            <li class="nav-item d-none" id="navUserItem">
+              <a class="nav-link" id="navUserBadge" href="#" title="Profile"></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-10 mx-auto text-center">
+            <div class="header-content">
+              <div class="header-badge mb-3">
+                <i class="fas fa-fire"></i>
+                <span>Singapore Server</span>
+              </div>
+              <h1 class="page-title">Free Fire (SG)</h1>
+              <p class="page-description">
+                Select your diamond package and top up instantly with secure
+                payment
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="packages-section">
+      <div class="container">
+        <!-- Section Title -->
+        <div class="section-header text-center mb-5">
+          <h2 class="section-title">Select Package</h2>
+          <p class="section-subtitle">Choose your preferred diamond package</p>
+        </div>
+
+        <!-- Package Cards Grid -->
+        <div class="row g-4">
+          <!-- Package Card 1: WEEKLY LITE -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div
+              class="package-card"
+              data-package="WEEKLY LITE"
+              data-price="120.00"
+            >
+              <div class="package-icon">
+                <img
+                  src="./assets/freefire packege/Weekly lite.png"
+                  alt="Weekly Lite"
+                />
+              </div>
+              <h3 class="package-name">WEEKLY LITE</h3>
+              <p class="package-price">Rs.120.00</p>
+              <button class="btn-order">Order Now</button>
+            </div>
+          </div>
+
+          <!-- Package Card 2: Weekly -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="package-card" data-package="Weekly" data-price="470.00">
+              <div class="package-icon">
+                <img src="./assets/freefire packege/Weekly.png" alt="Weekly" />
+              </div>
+              <h3 class="package-name">Weekly</h3>
+              <p class="package-price">Rs.470.00</p>
+              <button class="btn-order">Order Now</button>
+            </div>
+          </div>
+
+          <!-- Package Card 3: Monthly -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div
+              class="package-card"
+              data-package="Monthly"
+              data-price="2350.00"
+            >
+              <div class="package-icon">
+                <img
+                  src="./assets/freefire packege/Monthly.png"
+                  alt="Monthly"
+                />
+              </div>
+              <h3 class="package-name">Monthly</h3>
+              <p class="package-price">Rs.2350.00</p>
+              <button class="btn-order">Order Now</button>
+            </div>
+          </div>
+
+          <!-- Package Card 4: Little Pack -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div
+              class="package-card"
+              data-package="Little Pack"
+              data-price="1180.00"
+            >
+              <div class="package-icon">
+                <img
+                  src="./assets/freefire packege/Little pack.png"
+                  alt="Little Pack"
+                />
+              </div>
+              <h3 class="package-name">Little Pack</h3>
+              <p class="package-price">Rs.1180.00</p>
+              <button class="btn-order">Order Now</button>
+            </div>
+          </div>
+
+          <!-- Package Card 5: VIP PACK -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div
+              class="package-card"
+              data-package="VIP PACK"
+              data-price="2800.00"
+            >
+              <div class="package-icon">
+                <img
+                  src="./assets/freefire packege/VIP Pack.png"
+                  alt="VIP Pack"
+                />
+              </div>
+              <h3 class="package-name">VIP PACK</h3>
+              <p class="package-price">Rs.2800.00</p>
+              <button class="btn-order">Order Now</button>
+            </div>
+          </div>
+
+          <!-- Package Card 6: VIP SPECIAL -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div
+              class="package-card featured"
+              data-package="VIP SPECIAL"
+              data-price="2920.00"
+            >
+              <div class="package-icon">
+                <img
+                  src="./assets/freefire packege/VIP special.png"
+                  alt="VIP Special"
+                />
+              </div>
+              <h3 class="package-name">VIP SPECIAL</h3>
+              <p class="package-price">Rs.2920.00</p>
+              <button class="btn-order">Order Now</button>
+            </div>
+          </div>
+
+          <!-- Package Card 7: BIG PACK -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div
+              class="package-card"
+              data-package="BIG PACK"
+              data-price="4200.00"
+            >
+              <div class="package-icon">
+                <img src="./assets/freefire packege/diamond300.png" alt="Diamond 3000" />
+              </div>
+              <h3 class="package-name">Diamond x 3000</h3>
+              <p class="package-price">Rs.7050.00</p>
+              <button class="btn-order">Order Now</button>
+            </div>
+          </div>
+
+          <!-- Package Card 10: Diamond x 5000 -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div
+              class="package-card"
+              data-package="Diamond x 5000"
+              data-price="11750.00"
+            >
+              <div class="package-icon">
+                <img
+                  src="./assets/freefire packege/diamond5000.png"
+                  alt="Diamond 5000"
+                />
+              </div>
+              <h3 class="package-name">Diamond x 5000</h3>
+              <p class="package-price">Rs.11750.00</p>
+              <button class="btn-order">Order Now</button>
+            </div>
+          </div>
+
+          <!-- Package Card 11: Diamond x 8000 -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div
+              class="package-card"
+              data-package="Diamond x 8000"
+              data-price="18850.00"
+            >
+              <div class="package-icon">
+                <img
+                  src="./assets/freefire packege/daimond8000.png"
+                  alt="Diamond 8000"
+                />
+              </div>
+              <h3 class="package-name">Diamond x 8000</h3>
+              <p class="package-price">Rs.18850.00</p>
+              <button class="btn-order">Order Now</button>
+            </div>
+          </div>
+
+          <!-- Package Card 12: Diamond x 10000 -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div
+              class="package-card"
+              data-package="Diamond x 10000"
+              data-price="23500.00"
+            >
+              <div class="package-icon">
+                <img
+                  src="./assets/freefire packege/diamond1000.png"
+                  alt="Diamond 10000"
+                />
+              </div>
+              <h3 class="package-name">Diamond x 10000</h3>
+              <p class="package-price">Rs.23500.00</p>
+              <button class="btn-order">Order Now</button>
+            </div>
+          </div>
+
+          <!-- Additional cards 13-24 (same structure) -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div
+              class="package-card"
+              data-package="Evo Access 3D"
+              data-price="190.00"
+            >
+              <div class="package-icon">
+                <img
+                  src="./assets/freefire packege/EVO access 3d.png"
+                  alt="Evo Access 3D"
+                />
+              </div>
+              <h3 class="package-name">Evo Access 3D</h3>
+              <p class="package-price">Rs.190.00</p>
+              <button class="btn-order">Order Now</button>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div
+              class="package-card"
+              data-package="Evo Access 7D"
+              data-price="290.00"
+            >
+              <div class="package-icon">
+                <img
+                  src="./assets/freefire packege/EVO access 3d.png"
+                  alt="Evo Access 7D"
+                />
+              </div>
+              <h3 class="package-name">Evo Access 7D</h3>
+              <p class="package-price">Rs.290.00</p>
+              <button class="btn-order">Order Now</button>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div
+              class="package-card"
+              data-package="Evo Access 30D"
+              data-price="790.00"
+            >
+              <div class="package-icon">
+                <img
+                  src="./assets/freefire packege/EVO access 3d.png"
+                  alt="Evo Access 30D"
+                />
+              </div>
+              <h3 class="package-name">Evo Access 30D</h3>
+              <p class="package-price">Rs.790.00</p>
+              <button class="btn-order">Order Now</button>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div
+              class="package-card"
+              data-package="Level up pass"
+              data-price="1300.00"
+            >
+              <div class="package-icon">
+                <img
+                  src="./assets/freefire packege//level pass.jpg"
+                  alt="Level up pass"
+                />
+              </div>
+              <h3 class="package-name">Level up pass</h3>
+              <p class="package-price">Rs.1300.00</p>
+              <button class="btn-order">Order Now</button>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div
+              class="package-card"
+              data-package="Diamond x 25"
+              data-price="75.00"
+            >
+              <div class="package-icon">
+                <img src="./assets/Freefire id/Dimond.png" alt="Diamond 25" />
+              </div>
+              <h3 class="package-name">Diamond × 25</h3>
+              <p class="package-price">Rs.75.00</p>
+              <button class="btn-order">Order Now</button>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div
+              class="package-card"
+              data-package="Diamond x 100"
+              data-price="280.00"
+            >
+              <div class="package-icon">
+                <img src="./assets/Freefire id/Dimond.png" alt="Diamond 100" />
+              </div>
+              <h3 class="package-name">Diamond × 100</h3>
+              <p class="package-price">Rs.280.00</p>
+              <button class="btn-order">Order Now</button>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div
+              class="package-card"
+              data-package="Diamond x 310"
+              data-price="840.00"
+            >
+              <div class="package-icon">
+                <img src="./assets/Freefire id/Dimond.png" alt="Diamond 310" />
+              </div>
+              <h3 class="package-name">Diamond × 310</h3>
+              <p class="package-price">Rs.840.00</p>
+              <button class="btn-order">Order Now</button>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div
+              class="package-card"
+              data-package="Diamond x 520"
+              data-price="1410.00"
+            >
+              <div class="package-icon">
+                <img src="./assets/Freefire id/Dimond.png" alt="Diamond 520" />
+              </div>
+              <h3 class="package-name">Diamond × 520</h3>
+              <p class="package-price">Rs.1410.00</p>
+              <button class="btn-order">Order Now</button>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div
+              class="package-card"
+              data-package="Diamond x 1060"
+              data-price="2750.00"
+            >
+              <div class="package-icon">
+                <img src="./assets/Freefire id/Dimond.png" alt="Diamond 1060" />
+              </div>
+              <h3 class="package-name">Diamond × 1060</h3>
+              <p class="package-price">Rs.2750.00</p>
+              <button class="btn-order">Order Now</button>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div
+              class="package-card"
+              data-package="Diamond x 2180"
+              data-price="5550.00"
+            >
+              <div class="package-icon">
+                <img src="./assets/Freefire id/Dimond.png" alt="Diamond 2180" />
+              </div>
+              <h3 class="package-name">Diamond × 2180</h3>
+              <p class="package-price">Rs.5550.00</p>
+              <button class="btn-order">Order Now</button>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div
+              class="package-card"
+              data-package="Diamond x 5600"
+              data-price="13700.00"
+            >
+              <div class="package-icon">
+                <img src="./assets/Freefire id/Dimond.png" alt="Diamond 5600" />
+              </div>
+              <h3 class="package-name">Diamond × 5600</h3>
+              <p class="package-price">Rs.13700.00</p>
+              <button class="btn-order">Order Now</button>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div
+              class="package-card"
+              data-package="Diamond x 11500"
+              data-price="27990.00"
+            >
+              <div class="package-icon">
+                <img
+                  src="./assets/Freefire id/Dimond.png"
+                  alt="Diamond 11500"
+                />
+              </div>
+              <h3 class="package-name">Diamond × 11500</h3>
+              <p class="package-price">Rs.27990.00</p>
+              <button class="btn-order">Order Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Order Form Modal -->
+    <div
+      class="modal fade"
+      id="orderModal"
+      tabindex="-1"
+      aria-labelledby="orderModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="orderModalLabel">
+              <i class="fas fa-shopping-cart"></i>
+              Complete Your Order
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <!-- Order Summary -->
+            <div class="order-summary mb-4">
+              <div class="selected-package">
+                <h6>Selected Package</h6>
+                <div class="package-details">
+                  <span class="package-name-display" id="selectedPackageName"
+                    >-</span
+                  >
+                  <span class="package-price-display" id="selectedPackagePrice"
+                    >Rs.0.00</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Order Form with FormSubmit -->
+            <form
+              id="orderForm"
+              action="https://formsubmit.co/Slgaminghub09@gmail.com"
+              method="POST"
+              enctype="multipart/form-data"
+            >
+              <!-- FormSubmit Configuration -->
+              <input type="hidden" name="_subject" id="emailSubject" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="box" />
+              <input type="hidden" name="_next" value="false" />
+
+              <!-- Game ID -->
+              <div class="mb-3">
+                <label for="gameId" class="form-label">
+                  <i class="fas fa-gamepad"></i>
+                  Game ID / Player ID
+                  <span class="text-danger">*</span>
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="gameId"
+                  name="Game_ID"
+                  placeholder="Enter your Free Fire Game ID"
+                  required
+                />
+                <div class="form-text">Enter your Free Fire player ID</div>
+              </div>
+
+              <!-- Username -->
+              <div class="mb-3">
+                <label for="username" class="form-label">
+                  <i class="fas fa-user"></i>
+                  In-Game Username
+                  <span class="text-danger">*</span>
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="username"
+                  name="Username"
+                  placeholder="Enter your in-game username"
+                  required
+                />
+              </div>
+
+              <!-- Payment Method Selection -->
+              <div class="mb-3">
+                <label class="form-label d-block">
+                  <i class="fas fa-money-bill"></i>
+                  Payment Method
+                  <span class="text-danger">*</span>
+                </label>
+                <div class="payment-methods">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="paymentMethod" id="ezcashPayment" value="ezcash" checked>
+                    <label class="form-check-label" for="ezcashPayment">
+                      <i class="fas fa-wallet text-success"></i> eZcash
+                    </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="paymentMethod" id="bankPayment" value="bank">
+                    <label class="form-check-label" for="bankPayment">
+                      <i class="fas fa-university text-info"></i> Bank Transfer
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- EZcash Payment Details -->
+              <div id="ezcashDetails" class="payment-details mb-3">
+                <div class="alert bg-gradient" style="background-color: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.2); border-radius: 12px;">
+                  <h6 class="mb-2" style="color: #059669;">
+                    <i class="fas fa-wallet"></i> EZcash Payment Details
+                  </h6>
+                  <p class="small mb-2" style="color: #047857;">Send payment to either of these numbers:</p>
+                  <div class="d-flex flex-column gap-2">
+                    <div class="d-flex align-items-center justify-content-between p-3" style="background: rgba(0, 0, 0, 0.2); border-radius: 8px; border: 1px solid rgba(16, 185, 129, 0.1);">
+                      <span class="number fw-bold" style="color: #ecfdf5;">0773043667</span>
+                      <button type="button" class="btn btn-sm" style="background: rgba(16, 185, 129, 0.2); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); transition: all 0.3s ease;" onmouseover="this.style.background='rgba(16, 185, 129, 0.3)'" onmouseout="this.style.background='rgba(16, 185, 129, 0.2)'" data-copy="0773043667">
+                        <i class="fas fa-copy"></i> Copy
+                      </button>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between p-3" style="background: rgba(0, 0, 0, 0.2); border-radius: 8px; border: 1px solid rgba(16, 185, 129, 0.1);">
+                      <span class="number fw-bold" style="color: #ecfdf5;">04741880764</span>
+                      <button type="button" class="btn btn-sm" style="background: rgba(16, 185, 129, 0.2); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); transition: all 0.3s ease;" onmouseover="this.style.background='rgba(16, 185, 129, 0.3)'" onmouseout="this.style.background='rgba(16, 185, 129, 0.2)'" data-copy="04741880764">
+                        <i class="fas fa-copy"></i> Copy
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bank Payment Details -->
+              <div id="bankDetails" class="payment-details mb-3" style="display: none;">
+                <div class="alert bg-gradient" style="background-color: rgba(59, 130, 246, 0.05); border: 1px solid rgba(59, 130, 246, 0.2); border-radius: 12px;">
+                  <h6 class="mb-2" style="color: #3b82f6;">
+                    <i class="fas fa-university"></i> Bank Account Details
+                  </h6>
+                  <p class="small mb-2" style="color: #2563eb;">Transfer to either of these accounts:</p>
+                  
+                  <!-- BOC Bank Details -->
+                  <div class="bank-account p-3 mb-2" style="background: rgba(0, 0, 0, 0.2); border-radius: 8px; border: 1px solid rgba(59, 130, 246, 0.1);">
+                    <div class="d-flex justify-content-between mb-2">
+                      <span class="fw-bold" style="color: #60a5fa;">BOC Bank</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                      <span class="small" style="color: #93c5fd;">Account Number:</span>
+                      <div class="d-flex align-items-center">
+                        <span class="account-number me-2" style="color: #ecfdf5;">86800581</span>
+                        <button type="button" class="btn btn-sm" style="background: rgba(59, 130, 246, 0.2); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); transition: all 0.3s ease;" onmouseover="this.style.background='rgba(59, 130, 246, 0.3)'" onmouseout="this.style.background='rgba(59, 130, 246, 0.2)'" data-copy="86800581">
+                          <i class="fas fa-copy"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                      <span class="small" style="color: #93c5fd;">Account Holder:</span>
+                      <span style="color: #ecfdf5;">KWA Rasanga</span>
+                    </div>
+                  </div>
+
+                  <!-- Sampath Bank Details -->
+                  <div class="bank-account p-3" style="background: rgba(0, 0, 0, 0.2); border-radius: 8px; border: 1px solid rgba(59, 130, 246, 0.1);">
+                    <div class="d-flex justify-content-between mb-2">
+                      <span class="fw-bold" style="color: #60a5fa;">Sampath Bank</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                      <span class="small" style="color: #93c5fd;">Account Number:</span>
+                      <div class="d-flex align-items-center">
+                        <span class="account-number me-2" style="color: #ecfdf5;">115857695088</span>
+                        <button type="button" class="btn btn-sm" style="background: rgba(59, 130, 246, 0.2); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); transition: all 0.3s ease;" onmouseover="this.style.background='rgba(59, 130, 246, 0.3)'" onmouseout="this.style.background='rgba(59, 130, 246, 0.2)'" data-copy="115857695088">
+                          <i class="fas fa-copy"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                      <span class="small" style="color: #93c5fd;">Account Holder:</span>
+                      <span style="color: #ecfdf5;">KWA Rasanga</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Phone Number -->
+              <div class="mb-3">
+                <label for="phoneNumber" class="form-label">
+                  <i class="fas fa-phone"></i>
+                  Phone Number
+                  <span class="text-danger">*</span>
+                </label>
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="phoneNumber"
+                  name="Phone_Number"
+                  placeholder="07XXXXXXXX"
+                  required
+                />
+                <div class="form-text">Enter your WhatsApp number</div>
+              </div>
+
+              <!-- Email -->
+              <div class="mb-3">
+                <label for="email" class="form-label">
+                  <i class="fas fa-envelope"></i>
+                  Email Address
+                  <span class="text-danger">*</span>
+                </label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  placeholder="your@email.com"
+                  required
+                />
+              </div>
+
+              <!-- Hidden Package Details -->
+              <input type="hidden" id="packageName" name="Package_Name" />
+              <input type="hidden" id="packagePrice" name="Package_Price" />
+              <input type="hidden" id="orderId" name="Order_ID" />
+              <input type="hidden" id="orderDate" name="Order_Date" />
+
+              <!-- Payment Slip Upload - WORKS WITH FORMSUBMIT! -->
+              <div class="mb-3">
+                <label for="paymentSlip" class="form-label">
+                  <i class="fas fa-file-image"></i>
+                  Payment Slip / Screenshot
+                  <span class="text-danger">*</span>
+                </label>
+                <input
+                  type="file"
+                  class="form-control"
+                  id="paymentSlip"
+                  name="attachment"
+                  accept="image/*,.pdf"
+                  required
+                />
+                <div class="form-text">
+                  Upload your payment confirmation (Max 10MB)
+                </div>
+              </div>
+
+              <!-- Terms and Conditions -->
+              <div class="form-check mb-3">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="agreeTerms"
+                  required
+                />
+                <label class="form-check-label" for="agreeTerms">
+                  I agree to the
+                  <a href="#" class="text-decoration-none"
+                    >terms and conditions</a
+                  >
+                </label>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" class="btn-submit-order w-100">
+                <i class="fas fa-paper-plane"></i>
+                <span>Submit Order & Continue to WhatsApp</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Info Section -->
+    <section class="info-section py-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-3 col-6">
+            <div class="info-box text-center">
+              <i class="fas fa-bolt"></i>
+              <h5>Instant Delivery</h5>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="info-box text-center">
+              <i class="fas fa-shield-alt"></i>
+              <h5>100% Safe</h5>
+              <p>Secure Transaction</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="info-box text-center">
+              <i class="fas fa-headset"></i>
+              <h5>24/7 Support</h5>
+              <p>Always Available</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="info-box text-center">
+              <i class="fas fa-tags"></i>
+              <h5>Best Prices</h5>
+              <p>Competitive Rates</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Back to Home -->
+    <section class="back-section py-4">
+      <div class="container text-center">
+        <a href="index.html" class="btn-back-home">
+          <i class="fas fa-arrow-left"></i>
+          <span>Back to Home</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom Scripts -->
+    <script src="./assets/freefire-sg.js"></script>
+    <script src="./assets/quantity-controls.js"></script>
+  </body>
+</html>
+  </body>
+</html>

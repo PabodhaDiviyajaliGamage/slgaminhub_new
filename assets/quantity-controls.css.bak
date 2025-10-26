@@ -1,0 +1,65 @@
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 12px 0;
+    gap: 12px;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-quantity {
+    background: linear-gradient(135deg, rgba(147, 51, 234, 0.2) 0%, rgba(79, 70, 229, 0.2) 100%);
+    border: 1px solid rgba(147, 51, 234, 0.3);
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0;
+    font-size: 14px;
+}
+
+.btn-quantity:hover {
+    background: linear-gradient(135deg, rgba(147, 51, 234, 0.3) 0%, rgba(79, 70, 229, 0.3) 100%);
+    border-color: rgba(147, 51, 234, 0.4);
+    transform: translateY(-1px);
+}
+
+.btn-quantity:active {
+    transform: translateY(1px);
+}
+
+.quantity {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    min-width: 32px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 4px 8px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Disable text selection on quantity controls */
+.quantity-controls * {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+/* Ensure buttons don't interfere with card click */
+.quantity-controls button {
+    position: relative;
+    z-index: 2;
+}

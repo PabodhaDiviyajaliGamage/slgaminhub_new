@@ -1,0 +1,93 @@
+// Quantity Controls for Package Cards
+document.addEventListener('DOMContentLoaded', function() {
+    initializeQuantityControls();
+});
+
+function initializeQuantityControls() {
+    const packageCards = document.querySelectorAll('.package-card');
+    
+    packageCards.forEach(card => {
+        // Remove existing quantity controls if any
+        const existingControls = card.querySelector('.quantity-controls');
+        if (existingControls) {
+            existingControls.remove();
+        }
+
+        const originalPrice = parseFloat(card.getAttribute('data-price'));
+        const priceDisplay = card.querySelector('.package-price');
+        const orderBtn = card.querySelector('.btn-order');
+        
+        // Create quantity controls
+        const quantityControls = document.createElement('div');
+        quantityControls.className = 'quantity-controls';
+        quantityControls.innerHTML = `
+            <button type="button" class="btn-quantity" data-action="decrease">
+                <i class="fas fa-minus"></i>
+            </button>
+            <span class="quantity">1</span>
+            <button type="button" class="btn-quantity" data-action="increase">
+                <i class="fas fa-plus"></i>
+            </button>
+        `;
+        
+        // Insert quantity controls before the order button
+        orderBtn.parentNode.insertBefore(quantityControls, orderBtn);
+        
+        // Add event listeners for quantity buttons
+        const quantityDisplay = quantityControls.querySelector('.quantity');
+        const decreaseBtn = quantityControls.querySelector('[data-action="decrease"]');
+        const increaseBtn = quantityControls.querySelector('[data-action="increase"]');
+        
+        let quantity = 1;
+        
+        function updatePrice() {
+            const totalPrice = (originalPrice * quantity).toFixed(2);
+            priceDisplay.textContent = `Rs.${totalPrice}`;
+            card.setAttribute('data-current-price', totalPrice);
+            card.setAttribute('data-quantity', quantity);
+        }
+        
+        function handleQuantityButton(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const action = this.getAttribute('data-action');
+            if (action === 'decrease' && quantity > 1) {
+                quantity--;
+            } else if (action === 'increase' && quantity < 99) {
+                quantity++;
+            }
+            
+            quantityDisplay.textContent = quantity;
+            updatePrice();
+        }
+        
+        // Add event listeners
+        decreaseBtn.addEventListener('click', handleQuantityButton);
+        increaseBtn.addEventListener('click', handleQuantityButton);
+        
+        // Modify the order button click handler
+        if (orderBtn) {
+            const originalClick = orderBtn.onclick;
+            orderBtn.onclick = function(e) {
+                e.preventDefault();
+                const currentPrice = card.getAttribute('data-current-price') || card.getAttribute('data-price');
+                const currentQuantity = card.getAttribute('data-quantity') || '1';
+                
+                // Update the package name to include quantity if more than 1
+                const packageName = card.getAttribute('data-package');
+                const displayName = quantity > 1 ? `${packageName} × ${quantity}` : packageName;
+                
+                // Update the modal with quantity information
+                document.getElementById('selectedPackageName').textContent = displayName;
+                document.getElementById('selectedPackagePrice').textContent = `Rs.${currentPrice}`;
+                document.getElementById('packageName').value = displayName;
+                document.getElementById('packagePrice').value = currentPrice;
+                
+                // Show the modal
+                const orderModal = new bootstrap.Modal(document.getElementById('orderModal'));
+                orderModal.show();
+            };
+        }
+    });
+}

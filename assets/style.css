@@ -1,0 +1,2556 @@
+/* ==========================================
+   SL Gaming Hub - Professional CSS
+   Created with 15 years of industry experience
+   ========================================== */
+
+/* ==========================================
+   CSS Variables & Root Configuration
+   ========================================== */
+:root {
+    /* Color Palette */
+    --primary-navy: #1a1f3a;
+    --secondary-navy: #0f1729;
+    --accent-blue: #2563eb;
+    --accent-orange: #ff5722;
+    --accent-purple: #9333ea;
+    --accent-pink: #ec4899;
+    
+    /* Gradient Colors */
+    --gradient-pink: linear-gradient(135deg, #ff006e 0%, #8338ec 100%);
+    --gradient-purple: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-hero: linear-gradient(135deg, #ff006e 0%, #3a0ca3 50%, #7209b7 100%);
+    
+    /* Text Colors */
+    --text-white: #ffffff;
+    --text-gray: #94a3b8;
+    --text-light: #e2e8f0;
+    
+    /* Spacing */
+    --section-padding: 100px;
+    --container-padding: 80px;
+    
+    /* Typography */
+    --font-primary: 'Poppins', sans-serif;
+    
+    /* Transitions */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.3s ease;
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.3);
+    --shadow-glow: 0 0 30px rgba(147, 51, 234, 0.5);
+}
+
+/* ==========================================
+   Global Reset & Base Styles
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: var(--font-primary);
+    background: var(--primary-navy);
+    color: var(--text-white);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--secondary-navy);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gradient-pink);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-purple);
+}
+
+/* ==========================================
+   Navbar Styles
+   ========================================== */
+.navbar {
+    background: rgba(15, 23, 41, 0.95);
+    backdrop-filter: blur(20px);
+    padding: 1rem 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: var(--transition-smooth);
+    z-index: 1000;
+}
+
+.navbar.scrolled {
+    background: rgba(15, 23, 41, 0.98);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 0;
+}
+
+/* Logo Styles */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text-white);
+    transition: var(--transition-fast);
+    padding: 0.5rem 0;
+}
+
+.navbar-brand:hover {
+    color: var(--text-white);
+    transform: translateY(-2px);
+}
+
+.logo-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid var(--accent-purple);
+    padding: 3px;
+    transition: var(--transition-fast);
+    animation: logoFloat 3s ease-in-out infinite;
+}
+
+.navbar-brand:hover .logo-img {
+    border-color: var(--accent-pink);
+    transform: rotate(360deg);
+}
+
+@keyframes logoFloat {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.brand-text {
+    background: var(--gradient-pink);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+/* Navigation Links */
+.navbar-nav {
+    gap: 0.5rem;
+}
+
+.nav-link {
+    color: var(--text-light) !important;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.7rem 1.2rem !important;
+    margin: 0 0.2rem;
+    border-radius: 8px;
+    transition: var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--gradient-pink);
+    transition: var(--transition-fast);
+    transform: translateX(-50%);
+}
+
+.nav-link:hover {
+    color: var(--text-white) !important;
+    background: rgba(147, 51, 234, 0.1);
+    transform: translateY(-2px);
+}
+
+.nav-link:hover::before {
+    width: 80%;
+}
+
+.nav-link.active {
+    color: var(--text-white) !important;
+    background: var(--gradient-pink);
+    box-shadow: var(--shadow-glow);
+}
+
+.nav-link.active::before {
+    display: none;
+}
+
+/* Mobile Menu Toggle */
+.navbar-toggler {
+    border: 2px solid var(--accent-purple);
+    padding: 0.5rem 0.75rem;
+    transition: var(--transition-fast);
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.25rem rgba(147, 51, 234, 0.25);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* ==========================================
+   Hero Section
+ 
+  /* ==========================================
+   HERO SECTION - HUGE PADDING ALL SIDES
+   ========================================== */
+
+.hero-section {
+    padding: 120px 80px; /* Huge padding: Top/Bottom 120px, Left/Right 80px */
+    background: var(--primary-navy);
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center;
+}
+
+.hero-section .container {
+    max-width: 100%;
+    padding: 0;
+}
+
+.hero-banner-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+}
+
+.hero-banner-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    min-height: calc(100vh - 240px); /* Full height minus padding (120px top + 120px bottom) */
+}
+
+/* Optional Overlay */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.1) 0%,
+        rgba(0, 0, 0, 0.05) 100%
+    );
+    pointer-events: none;
+}
+
+/* ==========================================
+   GAMES SECTION - SIMPLE & RESPONSIVE
+   ========================================== */
+
+.games-section {
+    padding: 80px 0;
+    background: #0f1729;
+    position: relative;
+}
+
+/* Section Header */
+.section-header {
+    margin-bottom: 3rem;
+}
+
+.section-description {
+    color: #94a3b8;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* ==========================================
+   GAME CARDS
+   ========================================== */
+
+.game-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 2px solid rgba(147, 51, 234, 0.3);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+    border-color: #9333ea;
+}
+
+/* Featured Card */
+.game-card.featured {
+    border-color: #ffd700;
+    background: rgba(255, 215, 0, 0.05);
+}
+
+.game-card.featured:hover {
+    border-color: #ffed4e;
+}
+
+/* ==========================================
+   CARD IMAGE
+   ========================================== */
+
+.game-card-image {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.game-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.game-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5) 100%);
+}
+
+/* ==========================================
+   CARD BADGES
+   ========================================== */
+
+.game-card-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: white;
+    z-index: 2;
+}
+
+.badge-global {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+}
+
+.badge-featured {
+    background: linear-gradient(135deg, #ffd700 0%, #ff8a00 100%);
+}
+
+.game-card-badge i {
+    font-size: 1rem;
+}
+
+/* ==========================================
+   CARD CONTENT
+   ========================================== */
+
+.game-card-content {
+    padding: 25px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.game-card-description {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   FEATURES LIST
+   ========================================== */
+
+.game-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    flex: 1;
+}
+
+.game-features li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #e2e8f0;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.game-features li i {
+    color: #10b981;
+    font-size: 1rem;
+}
+
+/* ==========================================
+   TOP UP BUTTON
+   ========================================== */
+
+.btn-topup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #9333ea 0%, #7c3aed 100%);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-topup:hover {
+    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(147, 51, 234, 0.4);
+}
+
+.btn-topup i {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-topup:hover i {
+    transform: translateX(5px);
+}
+
+/* Featured Card Button */
+.game-card.featured .btn-topup {
+    background: linear-gradient(135deg, #ff8a00 0%, #ff5722 100%);
+}
+
+.game-card.featured .btn-topup:hover {
+    background: linear-gradient(135deg, #ff5722 0%, #f4511e 100%);
+}
+
+/* ==========================================
+   INFO BAR
+   ========================================== */
+
+.info-bar {
+    margin-top: 4rem;
+}
+
+.info-item {
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.info-item:hover {
+    transform: translateY(-5px);
+}
+
+.info-item i {
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, #ff006e 0%, #8338ec 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.info-item h4 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.info-item p {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+/* Large Desktops (1400px+) */
+@media (min-width: 1400px) {
+    .game-card-image {
+        height: 280px;
+    }
+    
+    .game-card-content {
+        padding: 30px;
+    }
+}
+
+/* Desktops (1200px - 1399px) */
+@media (max-width: 1399px) {
+    .game-card-image {
+        height: 250px;
+    }
+}
+
+/* Laptops (992px - 1199px) */
+@media (max-width: 1199px) {
+    .games-section {
+        padding: 70px 0;
+    }
+    
+    .game-card-image {
+        height: 230px;
+    }
+    
+    .game-card-title {
+        font-size: 1.4rem;
+    }
+}
+
+/* Tablets (768px - 991px) */
+@media (max-width: 991px) {
+    .games-section {
+        padding: 60px 0;
+    }
+    
+    .game-card-image {
+        height: 220px;
+    }
+    
+    .game-card-content {
+        padding: 20px;
+    }
+    
+    .game-card-title {
+        font-size: 1.3rem;
+    }
+    
+    .game-card-description {
+        font-size: 0.9rem;
+    }
+    
+    .info-item i {
+        font-size: 2rem;
+    }
+    
+    .info-item h4 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Mobile Devices (576px - 767px) */
+@media (max-width: 767px) {
+    .games-section {
+        padding: 50px 0;
+    }
+    
+    .section-description {
+        font-size: 1rem;
+    }
+    
+    .game-card {
+        margin-bottom: 20px;
+    }
+    
+    .game-card-image {
+        height: 200px;
+    }
+    
+    .game-card-content {
+        padding: 20px;
+    }
+    
+    .game-card-title {
+        font-size: 1.2rem;
+    }
+    
+    .game-card-description {
+        font-size: 0.85rem;
+        margin-bottom: 15px;
+    }
+    
+    .game-features li {
+        font-size: 0.85rem;
+        margin-bottom: 8px;
+    }
+    
+    .btn-topup {
+        padding: 12px 24px;
+        font-size: 0.95rem;
+    }
+    
+    .info-bar {
+        margin-top: 3rem;
+    }
+    
+    .info-item {
+        padding: 15px;
+    }
+    
+    .info-item i {
+        font-size: 2rem;
+    }
+    
+    .info-item h4 {
+        font-size: 1.1rem;
+    }
+    
+    .info-item p {
+        font-size: 0.85rem;
+    }
+}
+
+/* Small Mobile (481px - 575px) */
+@media (max-width: 575px) {
+    .games-section {
+        padding: 40px 0;
+    }
+    
+    .game-card-image {
+        height: 180px;
+    }
+    
+    .game-card-badge {
+        top: 10px;
+        right: 10px;
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+    
+    .game-card-content {
+        padding: 18px;
+    }
+    
+    .game-card-title {
+        font-size: 1.1rem;
+    }
+    
+    .game-card-description {
+        font-size: 0.8rem;
+    }
+    
+    .game-features li {
+        font-size: 0.8rem;
+    }
+    
+    .btn-topup {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Extra Small Mobile (max 480px) */
+@media (max-width: 480px) {
+    .game-card-image {
+        height: 160px;
+    }
+    
+    .game-card-content {
+        padding: 15px;
+    }
+    
+    .game-card-title {
+        font-size: 1rem;
+    }
+    
+    .btn-topup {
+        padding: 10px 18px;
+        font-size: 0.85rem;
+    }
+    
+    .info-item i {
+        font-size: 1.8rem;
+    }
+    
+    .info-item h4 {
+        font-size: 1rem;
+    }
+}
+
+/* Very Small Mobile (max 360px) */
+@media (max-width: 360px) {
+    .games-section {
+        padding: 30px 0;
+    }
+    
+    .game-card-image {
+        height: 150px;
+    }
+    
+    .game-card-title {
+        font-size: 0.95rem;
+    }
+    
+    .game-card-description {
+        font-size: 0.75rem;
+    }
+    
+    .game-features li {
+        font-size: 0.75rem;
+    }
+    
+    .btn-topup {
+        padding: 9px 16px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Fix for button not working - ensure proper z-index */
+.btn-topup {
+    position: relative;
+    z-index: 10;
+}
+
+/* Ensure clickable area */
+.game-card-content {
+    position: relative;
+    z-index: 5;
+}
+
+/* Remove any overlay blocking clicks */
+.game-card::before,
+.game-card::after {
+    pointer-events: none;
+}
+
+
+/* Background Decorations */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: -5%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(147, 51, 234, 0.12) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: floatBubble 20s ease-in-out infinite;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    bottom: -10%;
+    right: -5%;
+    width: 900px;
+    height: 900px;
+    background: radial-gradient(circle, rgba(255, 87, 34, 0.12) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: floatBubble 25s ease-in-out infinite reverse;
+}
+
+@keyframes floatBubble {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        transform: translate(60px, 60px) scale(1.1);
+    }
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+/* Large Desktops (1400px+) */
+@media (min-width: 1400px) {
+    .hero-section {
+        padding: 140px 100px; /* Even bigger padding for large screens */
+    }
+    
+    .hero-banner-image {
+        min-height: calc(100vh - 280px);
+    }
+}
+
+/* Desktops (1200px - 1399px) */
+@media (max-width: 1399px) {
+    .hero-section {
+        padding: 120px 80px;
+    }
+    
+    .hero-banner-image {
+        min-height: calc(100vh - 240px);
+    }
+}
+
+/* Laptops (992px - 1199px) */
+@media (max-width: 1199px) {
+    .hero-section {
+        padding: 100px 60px; /* Reduced padding for smaller screens */
+    }
+    
+    .hero-banner-wrapper {
+        border-radius: 25px;
+    }
+    
+    .hero-banner-image {
+        min-height: calc(100vh - 200px);
+    }
+}
+
+/* Tablets (768px - 991px) */
+@media (max-width: 991px) {
+    .hero-section {
+        padding: 80px 40px; /* Medium padding for tablets */
+    }
+    
+    .hero-banner-wrapper {
+        border-radius: 20px;
+    }
+    
+    .hero-banner-image {
+        min-height: calc(100vh - 160px);
+    }
+}
+
+/* Mobile Devices (576px - 767px) */
+@media (max-width: 767px) {
+    .hero-section {
+        padding: 60px 30px; /* Smaller padding for mobile */
+        min-height: auto;
+    }
+    
+    .hero-banner-wrapper {
+        border-radius: 18px;
+    }
+    
+    .hero-banner-image {
+        min-height: 400px; /* Fixed height for mobile */
+        max-height: 500px;
+    }
+}
+
+/* Small Mobile (481px - 575px) */
+@media (max-width: 575px) {
+    .hero-section {
+        padding: 50px 20px;
+    }
+    
+    .hero-banner-wrapper {
+        border-radius: 15px;
+    }
+    
+    .hero-banner-image {
+        min-height: 350px;
+        max-height: 450px;
+    }
+}
+
+/* Extra Small Mobile (max 480px) */
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 40px 15px;
+    }
+    
+    .hero-banner-wrapper {
+        border-radius: 12px;
+    }
+    
+    .hero-banner-image {
+        min-height: 300px;
+        max-height: 400px;
+    }
+}
+
+/* Very Small Mobile (max 360px) */
+@media (max-width: 360px) {
+    .hero-section {
+        padding: 30px 12px;
+    }
+    
+    .hero-banner-wrapper {
+        border-radius: 10px;
+    }
+    
+    .hero-banner-image {
+        min-height: 250px;
+        max-height: 350px;
+    }
+}
+
+/* Landscape Mode on Mobile */
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero-section {
+        padding: 40px 30px;
+        min-height: auto;
+    }
+    
+    .hero-banner-image {
+        min-height: 350px;
+        max-height: 450px;
+    }
+}
+
+/* Diamond Packages Grid */
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 40px;
+    max-width: 600px;
+}
+
+.package-item {
+    background: rgba(147, 51, 234, 0.1);
+    border: 2px solid rgba(147, 51, 234, 0.3);
+    border-radius: 20px;
+    padding: 18px 25px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+}
+
+.package-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: var(--transition-fast);
+}
+
+.package-item:hover::before {
+    left: 100%;
+}
+
+.package-item:hover {
+    background: var(--gradient-pink);
+    border-color: var(--accent-pink);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(147, 51, 234, 0.4);
+}
+
+.package-item.featured {
+    background: var(--gradient-pink);
+    border-color: var(--accent-pink);
+    box-shadow: 0 5px 20px rgba(255, 0, 110, 0.3);
+}
+
+.package-item.featured:hover {
+    transform: translateY(-8px) scale(1.08);
+    box-shadow: 0 15px 40px rgba(255, 0, 110, 0.5);
+}
+
+.package-item i {
+    font-size: 1.5rem;
+    color: #ffd700;
+    filter: drop-shadow(0 2px 5px rgba(255, 215, 0, 0.5));
+    animation: gemSparkle 2s ease-in-out infinite;
+}
+
+@keyframes gemSparkle {
+    0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 2px 5px rgba(255, 215, 0, 0.5));
+    }
+    50% {
+        transform: scale(1.15);
+        filter: drop-shadow(0 4px 10px rgba(255, 215, 0, 0.8));
+    }
+}
+
+.package-item.featured i {
+    animation: gemSparkle 1.5s ease-in-out infinite;
+}
+
+.package-price {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-white);
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Hero Image Section */
+.hero-image-wrapper {
+    position: relative;
+    z-index: 2;
+    animation: fadeInRight 1s ease-out 0.3s both;
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.hero-image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-person {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5));
+    animation: heroFloat 4s ease-in-out infinite;
+}
+
+@keyframes heroFloat {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Floating 24h Badge */
+.hero-badge-float {
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    background: var(--gradient-pink);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-glow);
+    animation: badgeFloat 3s ease-in-out infinite;
+    z-index: 3;
+}
+
+@keyframes badgeFloat {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-15px) rotate(5deg);
+    }
+}
+
+.badge-24h {
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-align: center;
+    line-height: 1.2;
+    display: block;
+    color: var(--text-white);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================
+   Responsive Design
+   ========================================== */
+
+/* Large Desktops */
+@media (max-width: 1400px) {
+    .hero-title {
+        font-size: 3.5rem;
+    }
+    
+    .sinhala-text {
+        font-size: 4rem;
+    }
+}
+
+/* Tablets & Small Laptops */
+@media (max-width: 992px) {
+    .hero-section {
+        padding: 100px 0 60px;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .sinhala-text {
+        font-size: 3.5rem;
+    }
+    
+    .packages-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    .hero-image-wrapper {
+        margin-top: 50px;
+    }
+    
+    .nav-link {
+        padding: 0.6rem 1rem !important;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .sinhala-text {
+        font-size: 3rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+    }
+    
+    .packages-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        max-width: 100%;
+    }
+    
+    .package-item {
+        padding: 15px 20px;
+    }
+    
+    .package-price {
+        font-size: 1rem;
+    }
+    
+    .hero-badge {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+    
+    .navbar-collapse {
+        background: rgba(15, 23, 41, 0.98);
+        padding: 1rem;
+        border-radius: 10px;
+        margin-top: 1rem;
+    }
+    
+    .nav-link {
+        margin: 0.25rem 0;
+    }
+    
+    .hero-badge-float {
+        top: 5%;
+        right: 5%;
+        padding: 15px;
+    }
+    
+    .badge-24h {
+        font-size: 1.4rem;
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .sinhala-text {
+        font-size: 2.5rem;
+    }
+    
+    .packages-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+    
+    .package-item {
+        padding: 12px 15px;
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+    
+    .package-item i {
+        font-size: 1.2rem;
+    }
+    
+    .package-price {
+        font-size: 0.9rem;
+    }
+    
+    .logo-img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .brand-text {
+        font-size: 1.2rem;
+    }
+}
+
+/* ==========================================
+   Utility Classes
+   ========================================== */
+.text-gradient {
+    background: var(--gradient-pink);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.shadow-glow-purple {
+    box-shadow: 0 0 30px rgba(147, 51, 234, 0.5);
+}
+
+.shadow-glow-pink {
+    box-shadow: 0 0 30px rgba(255, 0, 110, 0.5);
+}
+
+/* Smooth Transitions for All Interactive Elements */
+a, button, .package-item, .nav-link {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* ==========================================
+   INFO BAR
+   ========================================== */
+
+.info-bar {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(147, 51, 234, 0.2);
+    border-radius: 20px;
+    padding: 40px 20px;
+    margin-top: 5rem !important;
+}
+
+.info-item {
+    transition: var(--transition-fast);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.info-item:hover {
+    background: rgba(147, 51, 234, 0.1);
+    transform: translateY(-5px);
+}
+
+.info-item i {
+    font-size: 3rem;
+    background: var(--gradient-pink);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+    display: inline-block;
+    animation: iconFloat 3s ease-in-out infinite;
+}
+
+@keyframes iconFloat {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.info-item h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 0.5rem;
+}
+
+.info-item p {
+    font-size: 1rem;
+    color: var(--text-gray);
+    margin: 0;
+}
+
+/* ==========================================
+   MORE GAMES SECTION
+   ========================================== */
+
+.more-games-section {
+    background: var(--secondary-navy);
+    padding: 60px 0;
+}
+
+.more-games-section h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 2rem;
+}
+
+.btn-secondary-custom {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(147, 51, 234, 0.2);
+    border: 2px solid var(--accent-purple);
+    color: var(--text-white);
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.btn-secondary-custom:hover {
+    background: var(--gradient-pink);
+    border-color: var(--accent-pink);
+    color: var(--text-white);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(147, 51, 234, 0.4);
+}
+
+.btn-secondary-custom i {
+    font-size: 1.3rem;
+}
+
+/* ==========================================
+   LOADING ANIMATION FOR CARDS
+   ========================================== */
+
+.game-card {
+    animation: fadeInUp 0.8s ease-out both;
+}
+
+.game-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.game-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.game-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+/* Tablets */
+@media (max-width: 992px) {
+    .section-title {
+        font-size: 2.5rem;
+    }
+    
+    .section-description {
+        font-size: 1.1rem;
+    }
+    
+    .game-card-image {
+        height: 250px;
+    }
+    
+    .game-card-title {
+        font-size: 1.6rem;
+    }
+    
+    .info-bar {
+        padding: 30px 15px;
+    }
+    
+    .info-item i {
+        font-size: 2.5rem;
+    }
+    
+    .info-item h4 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+    .games-section {
+        padding: 60px 0;
+    }
+    
+    .section-header {
+        margin-bottom: 3rem !important;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .section-description {
+        font-size: 1rem;
+    }
+    
+    .game-card-image {
+        height: 220px;
+    }
+    
+    .game-card-content {
+        padding: 25px;
+    }
+    
+    .game-card-title {
+        font-size: 1.4rem;
+    }
+    
+    .game-card-description {
+        font-size: 0.95rem;
+    }
+    
+    .btn-topup {
+        padding: 14px 30px;
+        font-size: 1rem;
+    }
+    
+    .info-bar {
+        margin-top: 3rem !important;
+        padding: 25px 10px;
+    }
+    
+    .info-item {
+        padding: 15px;
+    }
+    
+    .info-item i {
+        font-size: 2rem;
+    }
+    
+    .info-item h4 {
+        font-size: 1.2rem;
+    }
+    
+    .info-item p {
+        font-size: 0.9rem;
+    }
+    
+    .more-games-section h3 {
+        font-size: 1.5rem;
+    }
+    
+    .btn-secondary-custom {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 576px) {
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .game-card {
+        margin-bottom: 1.5rem;
+    }
+    
+    .game-card-image {
+        height: 200px;
+    }
+    
+    .game-card-content {
+        padding: 20px;
+    }
+    
+    .game-features li {
+        font-size: 0.9rem;
+    }
+    
+    .game-card.featured::after {
+        font-size: 0.65rem;
+        padding: 3px 40px;
+    }
+}
+
+/* ==========================================
+   CUSTOM ANIMATIONS
+   ========================================== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Card Glow Effect on Hover */
+.game-card:hover {
+    animation: cardGlow 1.5s ease-in-out infinite;
+}
+
+@keyframes cardGlow {
+    0%, 100% {
+        box-shadow: 0 20px 60px rgba(147, 51, 234, 0.4);
+    }
+    50% {
+        box-shadow: 0 20px 60px rgba(255, 0, 110, 0.5);
+    }
+}
+
+/* Smooth transition for all interactive elements */
+.game-card,
+.btn-topup,
+.info-item,
+.btn-secondary-custom {
+    will-change: transform;
+}
+/* ==========================================
+   PAYMENT & SUPPORT INFORMATION SECTION
+   Complete Standalone CSS
+   ========================================== */
+
+.payment-support-section {
+    padding: 60px 0;
+    background: #1a1f3a;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background Decorative Elements */
+.payment-support-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -10%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(147, 51, 234, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: floatBubble 30s ease-in-out infinite;
+}
+
+@keyframes floatBubble {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        transform: translate(50px, 50px) scale(1.1);
+    }
+}
+
+//* ==========================================
+   PAYMENT & SUPPORT INFORMATION SECTION
+   Complete Standalone CSS - Fully Responsive
+   ========================================== */
+
+.payment-support-section {
+    padding: 60px 0;
+    background: #1a1f3a;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background Decorative Elements */
+.payment-support-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -10%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(147, 51, 234, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: floatBubble 30s ease-in-out infinite;
+}
+
+@keyframes floatBubble {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        transform: translate(50px, 50px) scale(1.1);
+    }
+}
+
+/* ==========================================
+   MAIN PAYMENT SUPPORT CARD
+   ========================================== */
+
+.payment-support-card {
+    background: linear-gradient(135deg, 
+        rgba(37, 99, 235, 0.15) 0%, 
+        rgba(147, 51, 234, 0.15) 50%, 
+        rgba(236, 72, 153, 0.15) 100%);
+    backdrop-filter: blur(20px);
+    border: 2px solid rgba(147, 51, 234, 0.3);
+    border-radius: 30px;
+    padding: 35px 30px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.payment-support-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: floatBubble 25s ease-in-out infinite;
+}
+
+/* Force Horizontal Layout on Desktop */
+.payment-support-card .row {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+}
+
+.payment-support-card .row > [class*="col-"] {
+    flex: 1;
+    min-width: 0;
+}
+
+/* ==========================================
+   SECTION TITLE
+   ========================================== */
+
+.payment-section-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 2rem;
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 5px 20px rgba(255, 215, 0, 0.3);
+}
+
+/* ==========================================
+   INFO BOX STYLES
+   ========================================== */
+
+.info-box {
+    padding: 25px 20px;
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Store Hours Box - Blue Theme */
+.store-hours-box {
+    background: rgba(37, 99, 235, 0.1);
+}
+
+.store-hours-box .info-header {
+    color: #60a5fa;
+}
+
+/* eZcash Box - Green Theme */
+.ezcash-box {
+    background: rgba(16, 185, 129, 0.15);
+}
+
+.ezcash-box .info-header {
+    color: #10b981;
+}
+
+/* Support Box - Purple Theme */
+.support-box {
+    background: rgba(147, 51, 234, 0.1);
+}
+
+.support-box .info-header {
+    color: #a78bfa;
+}
+
+/* ==========================================
+   INFO HEADER
+   ========================================== */
+
+.info-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.info-header i {
+    font-size: 1.8rem;
+}
+
+.info-header h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+    flex: 1;
+}
+
+/* Recommended Badge */
+.recommended-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
+}
+
+/* ==========================================
+   INFO CONTENT
+   ========================================== */
+
+.info-content {
+    flex: 1;
+}
+
+.info-description,
+.payment-description,
+.support-description {
+    color: #e2e8f0;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.info-note {
+    color: #94a3b8;
+    font-size: 0.8rem;
+    font-style: italic;
+    line-height: 1.4;
+    margin-top: 0.8rem;
+}
+
+/* ==========================================
+   STORE TIME
+   ========================================== */
+
+.store-time {
+    background: rgba(37, 99, 235, 0.2);
+    border: 2px solid rgba(96, 165, 250, 0.3);
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.time-highlight {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #60a5fa;
+    display: block;
+    text-shadow: 0 3px 10px rgba(96, 165, 250, 0.5);
+}
+
+/* ==========================================
+   PAYMENT NUMBERS
+   ========================================== */
+
+.payment-numbers {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 1rem;
+}
+
+.payment-number-item {
+    background: rgba(16, 185, 129, 0.2);
+    border: 2px solid rgba(16, 185, 129, 0.4);
+    border-radius: 12px;
+    padding: 12px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.payment-number-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #10b981 0%, #059669 100%);
+    transition: all 0.3s ease;
+}
+
+.payment-number-item:hover {
+    background: rgba(16, 185, 129, 0.3);
+    border-color: #10b981;
+    transform: translateX(5px);
+}
+
+.payment-number-item:hover::before {
+    width: 8px;
+}
+
+.payment-number-item i {
+    font-size: 1.1rem;
+    color: #10b981;
+    flex-shrink: 0;
+}
+
+.payment-number-item .number {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 1px;
+    flex: 1;
+    font-family: 'Courier New', monospace;
+}
+
+/* Copy Button */
+.btn-copy {
+    background: rgba(16, 185, 129, 0.2);
+    border: 1px solid rgba(16, 185, 129, 0.4);
+    color: #10b981;
+    padding: 6px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.btn-copy:hover {
+    background: #10b981;
+    color: white;
+    transform: scale(1.1);
+}
+
+.btn-copy:active {
+    transform: scale(0.95);
+}
+
+/* ==========================================
+   WHATSAPP BUTTON
+   ========================================== */
+
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+    position: relative;
+    overflow: hidden;
+    margin-top: 0.8rem;
+    width: 100%;
+}
+
+.btn-whatsapp:hover {
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6);
+}
+
+.btn-whatsapp i {
+    font-size: 1.2rem;
+}
+
+/* ==========================================
+   SUPPORT FEATURES
+   ========================================== */
+
+.support-features {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 1rem;
+}
+
+.support-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #e2e8f0;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.support-feature-item:hover {
+    color: #ffffff;
+    transform: translateX(5px);
+}
+
+.support-feature-item i {
+    color: #a78bfa;
+    font-size: 1rem;
+}
+
+/* ==========================================
+   VERTICAL DIVIDER
+   ========================================== */
+
+.vertical-divider {
+    width: 2px;
+    background: linear-gradient(to bottom, 
+        transparent 0%, 
+        rgba(147, 51, 234, 0.5) 50%, 
+        transparent 100%);
+    margin: 0 auto;
+    align-self: stretch;
+}
+
+/* ==========================================
+   RESPONSIVE MEDIA QUERIES - ALL CLASSES
+   ========================================== */
+
+/* Tablets and Below (991px) - STACK VERTICALLY */
+@media (max-width: 991px) {
+    .payment-support-section {
+        padding: 40px 0;
+    }
+    
+    .payment-support-section::before {
+        width: 600px;
+        height: 600px;
+    }
+    
+    .payment-support-card {
+        padding: 25px 20px;
+        border-radius: 25px;
+    }
+    
+    .payment-support-card::before {
+        width: 400px;
+        height: 400px;
+    }
+    
+    /* CRITICAL: Stack columns vertically */
+    .payment-support-card .row {
+        flex-wrap: wrap !important;
+    }
+    
+    .payment-support-card .row > [class*="col-"] {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    
+    .payment-section-title {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+        letter-spacing: 1.5px;
+    }
+    
+    .info-box {
+        padding: 25px 20px;
+        margin-bottom: 0;
+    }
+    
+    .store-hours-box,
+    .ezcash-box,
+    .support-box {
+        background: rgba(37, 99, 235, 0.08);
+    }
+    
+    /* Hide vertical dividers */
+    .vertical-divider {
+        display: none !important;
+    }
+    
+    /* Add horizontal separators */
+    .info-box:not(:last-child) {
+        border-bottom: 2px solid rgba(147, 51, 234, 0.3);
+        padding-bottom: 25px;
+        margin-bottom: 25px;
+    }
+    
+    .info-header {
+        gap: 10px;
+    }
+    
+    .info-header i {
+        font-size: 1.6rem;
+    }
+    
+    .info-header h3 {
+        font-size: 1.1rem;
+    }
+    
+    .recommended-badge {
+        font-size: 0.62rem;
+        padding: 4px 11px;
+    }
+    
+    .info-content {
+        margin-top: 0.5rem;
+    }
+    
+    .info-description,
+    .payment-description,
+    .support-description {
+        font-size: 0.82rem;
+    }
+    
+    .info-note {
+        font-size: 0.78rem;
+    }
+    
+    .store-time {
+        padding: 14px;
+        border-radius: 14px;
+    }
+    
+    .time-highlight {
+        font-size: 1.3rem;
+    }
+    
+    .payment-numbers {
+        gap: 9px;
+    }
+    
+    .payment-number-item {
+        padding: 11px 14px;
+        border-radius: 11px;
+    }
+    
+    .payment-number-item i {
+        font-size: 1.05rem;
+    }
+    
+    .payment-number-item .number {
+        font-size: 1rem;
+    }
+    
+    .btn-copy {
+        padding: 5px 9px;
+        font-size: 0.88rem;
+    }
+    
+    .btn-whatsapp {
+        padding: 11px 23px;
+        font-size: 0.95rem;
+    }
+    
+    .btn-whatsapp i {
+        font-size: 1.15rem;
+    }
+    
+    .support-features {
+        gap: 7px;
+    }
+    
+    .support-feature-item {
+        font-size: 0.82rem;
+    }
+    
+    .support-feature-item i {
+        font-size: 0.95rem;
+    }
+}
+
+/* Mobile Devices (767px and below) */
+@media (max-width: 767px) {
+    .payment-support-section {
+        padding: 35px 0;
+    }
+    
+    .payment-support-section::before {
+        width: 500px;
+        height: 500px;
+        left: -15%;
+    }
+    
+    .payment-support-card {
+        padding: 20px 15px;
+        border-radius: 20px;
+        border-width: 1.5px;
+    }
+    
+    .payment-support-card::before {
+        width: 350px;
+        height: 350px;
+    }
+    
+    .payment-section-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.2rem;
+        letter-spacing: 1px;
+    }
+    
+    .info-box {
+        padding: 20px 15px;
+    }
+    
+    .info-box:not(:last-child) {
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        border-bottom-width: 1.5px;
+    }
+    
+    .info-header {
+        gap: 9px;
+        margin-bottom: 0.9rem;
+    }
+    
+    .info-header i {
+        font-size: 1.5rem;
+    }
+    
+    .info-header h3 {
+        font-size: 1rem;
+    }
+    
+    .recommended-badge {
+        font-size: 0.6rem;
+        padding: 3px 10px;
+        border-radius: 18px;
+    }
+    
+    .info-description,
+    .payment-description,
+    .support-description {
+        font-size: 0.8rem;
+        line-height: 1.45;
+        margin-bottom: 0.9rem;
+    }
+    
+    .info-note {
+        font-size: 0.75rem;
+        margin-top: 0.7rem;
+    }
+    
+    .store-time {
+        padding: 12px;
+        border-radius: 12px;
+        margin-bottom: 0.9rem;
+    }
+    
+    .time-highlight {
+        font-size: 1.2rem;
+    }
+    
+    .payment-numbers {
+        gap: 9px;
+        margin-top: 0.9rem;
+    }
+    
+    .payment-number-item {
+        padding: 10px 12px;
+        border-radius: 10px;
+        gap: 9px;
+    }
+    
+    .payment-number-item::before {
+        width: 3px;
+    }
+    
+    .payment-number-item:hover::before {
+        width: 6px;
+    }
+    
+    .payment-number-item i {
+        font-size: 1rem;
+    }
+    
+    .payment-number-item .number {
+        font-size: 0.95rem;
+    }
+    
+    .btn-copy {
+        padding: 5px 8px;
+        font-size: 0.85rem;
+        border-radius: 7px;
+    }
+    
+    .btn-whatsapp {
+        padding: 11px 20px;
+        font-size: 0.9rem;
+        border-radius: 45px;
+        margin-top: 0.7rem;
+    }
+    
+    .btn-whatsapp i {
+        font-size: 1.1rem;
+    }
+    
+    .support-features {
+        gap: 7px;
+        margin-top: 0.9rem;
+    }
+    
+    .support-feature-item {
+        font-size: 0.8rem;
+    }
+    
+    .support-feature-item i {
+        font-size: 0.9rem;
+    }
+}
+
+/* Small Mobile (575px and below) */
+@media (max-width: 575px) {
+    .payment-support-section {
+        padding: 30px 0;
+    }
+    
+    .payment-support-section::before {
+        width: 400px;
+        height: 400px;
+    }
+    
+    .payment-support-card {
+        padding: 18px 12px;
+        border-radius: 18px;
+    }
+    
+    .payment-support-card::before {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .payment-section-title {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+    
+    .info-box {
+        padding: 18px 12px;
+    }
+    
+    .info-box:not(:last-child) {
+        padding-bottom: 18px;
+        margin-bottom: 18px;
+    }
+    
+    .info-header i {
+        font-size: 1.4rem;
+    }
+    
+    .info-header h3 {
+        font-size: 0.95rem;
+    }
+    
+    .recommended-badge {
+        font-size: 0.58rem;
+        padding: 3px 9px;
+    }
+    
+    .info-description,
+    .payment-description,
+    .support-description {
+        font-size: 0.78rem;
+    }
+    
+    .info-note {
+        font-size: 0.73rem;
+    }
+    
+    .store-time {
+        padding: 11px;
+    }
+    
+    .time-highlight {
+        font-size: 1.1rem;
+    }
+    
+    .payment-number-item {
+        padding: 9px 11px;
+    }
+    
+    .payment-number-item .number {
+        font-size: 0.9rem;
+    }
+    
+    .btn-copy {
+        padding: 4px 7px;
+        font-size: 0.82rem;
+    }
+    
+    .btn-whatsapp {
+        font-size: 0.85rem;
+        padding: 10px 18px;
+    }
+    
+    .support-feature-item {
+        font-size: 0.78rem;
+    }
+}
+
+/* Extra Small Mobile (480px and below) */
+@media (max-width: 480px) {
+    .payment-support-section {
+        padding: 25px 0;
+    }
+    
+    .payment-support-section::before {
+        width: 350px;
+        height: 350px;
+    }
+    
+    .payment-support-card {
+        padding: 15px 10px;
+        border-radius: 15px;
+    }
+    
+    .payment-support-card::before {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .payment-section-title {
+        font-size: 1.2rem;
+        margin-bottom: 0.9rem;
+    }
+    
+    .info-box {
+        padding: 15px 10px;
+    }
+    
+    .info-box:not(:last-child) {
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .info-header {
+        gap: 8px;
+    }
+    
+    .info-header i {
+        font-size: 1.3rem;
+    }
+    
+    .info-header h3 {
+        font-size: 0.9rem;
+    }
+    
+    .recommended-badge {
+        font-size: 0.56rem;
+        padding: 2px 8px;
+    }
+    
+    .info-description,
+    .payment-description,
+    .support-description {
+        font-size: 0.75rem;
+        line-height: 1.4;
+    }
+    
+    .info-note {
+        font-size: 0.7rem;
+    }
+    
+    .store-time {
+        padding: 10px;
+        border-radius: 10px;
+    }
+    
+    .time-highlight {
+        font-size: 1rem;
+    }
+    
+    .payment-numbers {
+        gap: 8px;
+    }
+    
+    .payment-number-item {
+        padding: 8px 10px;
+        border-radius: 9px;
+        gap: 8px;
+    }
+    
+    .payment-number-item i {
+        font-size: 0.95rem;
+    }
+    
+    .payment-number-item .number {
+        font-size: 0.85rem;
+    }
+    
+    .btn-copy {
+        padding: 4px 6px;
+        font-size: 0.8rem;
+    }
+    
+    .btn-whatsapp {
+        padding: 9px 15px;
+        font-size: 0.8rem;
+        border-radius: 40px;
+    }
+    
+    .btn-whatsapp i {
+        font-size: 1rem;
+    }
+    
+    .support-features {
+        gap: 6px;
+    }
+    
+    .support-feature-item {
+        font-size: 0.75rem;
+    }
+    
+    .support-feature-item i {
+        font-size: 0.85rem;
+    }
+}
+
+/* Very Small Mobile (360px and below) */
+@media (max-width: 360px) {
+    .payment-support-section {
+        padding: 20px 0;
+    }
+    
+    .payment-support-card {
+        padding: 12px 8px;
+        border-radius: 12px;
+    }
+    
+    .payment-section-title {
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .info-box {
+        padding: 12px 8px;
+    }
+    
+    .info-box:not(:last-child) {
+        padding-bottom: 12px;
+        margin-bottom: 12px;
+    }
+    
+    .info-header i {
+        font-size: 1.2rem;
+    }
+    
+    .info-header h3 {
+        font-size: 0.85rem;
+    }
+    
+    .recommended-badge {
+        font-size: 0.54rem;
+        padding: 2px 7px;
+    }
+    
+    .info-description,
+    .payment-description,
+    .support-description {
+        font-size: 0.72rem;
+    }
+    
+    .info-note {
+        font-size: 0.68rem;
+    }
+    
+    .store-time {
+        padding: 9px;
+    }
+    
+    .time-highlight {
+        font-size: 0.95rem;
+    }
+    
+    .payment-number-item {
+        padding: 7px 9px;
+    }
+    
+    .payment-number-item .number {
+        font-size: 0.8rem;
+    }
+    
+    .btn-copy {
+        padding: 3px 5px;
+        font-size: 0.75rem;
+    }
+    
+    .btn-whatsapp {
+        font-size: 0.75rem;
+        padding: 8px 12px;
+    }
+    
+    .support-feature-item {
+        font-size: 0.72rem;
+    }
+}
+
+/* Landscape Mode on Mobile */
+@media (max-height: 600px) and (orientation: landscape) {
+    .payment-support-section {
+        padding: 20px 0;
+    }
+    
+    .payment-support-card {
+        padding: 15px 20px;
+    }
+    
+    .payment-section-title {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+    
+    .info-box {
+        padding: 15px 12px;
+    }
+    
+    .info-box:not(:last-child) {
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+    }
+}

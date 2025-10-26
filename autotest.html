@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Auto Test - SL Gaming Hub</title>
+  </head>
+  <body>
+    <p>Running auto test: register -> logout -> login -> redirect to home</p>
+    <script src="./assets/auth.js"></script>
+    <script>
+      (function () {
+        // default test credentials
+        const params = new URLSearchParams(location.search);
+        const email = (params.get('email') || 'test@example.com').trim().toLowerCase();
+        const password = params.get('password') || 'Password123';
+        const username = params.get('username') || 'TestUser';
+
+        // remove existing test user so register succeeds
+        try {
+          const USERS_KEY = 'slg_users';
+          const users = JSON.parse(localStorage.getItem(USERS_KEY) || '{}');
+          if (users[email]) {
+            delete users[email];
+            localStorage.setItem(USERS_KEY, JSON.stringify(users));
+          }
+        } catch (e) {}
+
+        // register
+        try {
+          const res = window.SLGAuth.registerUser(username, email, password);
+          console.log('register', res);
+        } catch (e) { console.error(e); }
+
+        // logout
+        try { window.SLGAuth.logout(); } catch (e) {}
+
+        // navigate to login which will auto-login via query params
+        const loginUrl = 'login.html?auto=1&email=' + encodeURIComponent(email) + '&password=' + encodeURIComponent(password) + '&redirect=index.html';
+        location.replace(loginUrl);
+      })();
+    </script>
+  </body>
+</html>

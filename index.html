@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+      // Early redirect: if not authenticated, immediately go to login page
+      try {
+        var _auth = localStorage.getItem('slg_authenticated');
+        if (!(_auth && _auth !== 'null')) {
+          // redirect to login and preserve intended page
+          location.replace('login.html?redirect=index.html');
+        }
+      } catch (e) {
+        /* ignore - if localStorage not available just continue */
+      }
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SL Gaming Hub - Buy Gaming Diamonds</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/style.css" />
+    <script src="./assets/auth.js"></script>
+  </head>
+  <body>
+    <!-- Navbar Section -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container-fluid px-4">
+        <!-- Logo and Brand -->
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img
+            src="./assets/log.jpeg"
+            alt="SL Gaming Hub Logo"
+            class="logo-img"
+          />
+          <span class="brand-text ms-2">SL Gaming Hub</span>
+        </a>
+
+        <!-- Mobile Toggle Button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navigation Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item">
+             <a class="nav-link active" id="navAuthLink" href="login.html">Login</a>
+
+            </li>
+            <li class="nav-item d-none" id="navUserItem">
+              <a class="nav-link" id="navUserBadge" href="#" title="Profile"></a>
+            </li>
+            <li class="nav-item">
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section - Full Width Banner -->
+    <section class="hero-section" id="home">
+      <div class="hero-banner-wrapper">
+        <img
+          src="./assets/banner.jpg"
+          alt="Gaming Hero Banner"
+          class="hero-banner-image"
+        />
+
+        <!-- Optional: Overlay for better text visibility if you add content later -->
+        <div class="hero-overlay"></div>
+      </div>
+    </section>
+
+    <!-- Games Package Section -->
+    <section class="games-section" id="games">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header text-center mb-5">
+          <p class="section-description">
+            Select your favorite game and top up instantly with secure payment
+          </p>
+        </div>
+
+        <!-- Games Grid -->
+        <div class="row g-4 justify-content-center">
+          <!-- Free Fire SG Card -->
+
+          <div class="col-lg-4 col-md-6">
+            <div class="game-card" data-game="pubg-mobile">
+              <!-- Card Image -->
+              <div class="game-card-image">
+                <img src="./assets/FreeFire.jpg" alt="PUBG Mobile Global" />
+                <div class="game-card-overlay">
+                  <div class="game-card-badge badge-global">
+                    <i class="fas fa-globe"></i>
+                    <span>SG</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card Content -->
+              <div class="game-card-content">
+                <h3 class="game-card-title">Free Fire (SG)</h3>
+                <p class="game-card-description">
+                  Global server with UC top up and elite pass
+                </p>
+
+                <!-- Features List -->
+                <ul class="game-features">
+                  <li><i class="fas fa-check-circle"></i> Instant Delivery</li>
+                  <li><i class="fas fa-check-circle"></i> 24/7 Support</li>
+                </ul>
+
+                <!-- Top Up Button -->
+                <a href="./freefire-sg.html" class="btn-topup">
+                  <span>Top Up Now</span>
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Free Fire Indonesia Card -->
+          <div class="col-lg-4 col-md-6">
+            <div class="game-card featured" data-game="freefire-indonesia">
+              <!-- Card Image -->
+              <div class="game-card-image">
+                <img src="./assets/FreeFire.jpg" alt="Free Fire Indonesia" />
+                <div class="game-card-overlay">
+                  <div class="game-card-badge badge-featured">
+                    <i class="fas fa-star"></i>
+                    <span>Featured</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card Content -->
+              <div class="game-card-content">
+                <h3 class="game-card-title">Free Fire (Indonesia)</h3>
+                <p class="game-card-description">
+                  Indonesian server with fastest processing time
+                </p>
+
+                <!-- Features List -->
+                <ul class="game-features">
+                  <li><i class="fas fa-check-circle"></i> Instant Delivery</li>
+                  <li><i class="fas fa-check-circle"></i> Best Rates</li>
+                  <li><i class="fas fa-check-circle"></i> Trusted Seller</li>
+                </ul>
+
+                <!-- Top Up Button -->
+                <a href="freefire-indonesia.html" class="btn-topup">
+                  <span>Top Up Now</span>
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- PUBG Mobile Global Card -->
+          <div class="col-lg-4 col-md-6">
+            <div class="game-card" data-game="pubg-mobile">
+              <!-- Card Image -->
+              <div class="game-card-image">
+                <img src="./assets/PBG.png" alt="PUBG Mobile Global" />
+                <div class="game-card-overlay">
+                  <div class="game-card-badge badge-global">
+                    <i class="fas fa-globe"></i>
+                    <span>Global</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card Content -->
+              <div class="game-card-content">
+                <h3 class="game-card-title">PUBG Mobile (Global)</h3>
+                <p class="game-card-description">
+                  Global server with UC top up and elite pass
+                </p>
+
+                <!-- Features List -->
+                <ul class="game-features">
+                  <li><i class="fas fa-check-circle"></i> All Regions</li>
+                  <li><i class="fas fa-check-circle"></i> UC & Elite Pass</li>
+                  <li><i class="fas fa-check-circle"></i> Fast Process</li>
+                </ul>
+
+                <!-- Top Up Button -->
+                <a href="pubg-mobile.html" class="btn-topup">
+                  <span>Top Up Now</span>
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional Info Bar -->
+        <div class="info-bar mt-5">
+          <div class="row text-center g-4">
+            <div class="col-md-3 col-6">
+              <div class="info-item">
+                <i class="fas fa-bolt"></i>
+                <h4>Instant</h4>
+                <p>Auto Delivery</p>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="info-item">
+                <i class="fas fa-shield-alt"></i>
+                <h4>Secure</h4>
+                <p>100% Safe</p>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="info-item">
+                <i class="fas fa-headset"></i>
+                <h4>Support</h4>
+                <p>24/7 Online</p>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="info-item">
+                <i class="fas fa-users"></i>
+                <h4>10K+</h4>
+                <p>Happy Users</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Payment & Support Information Section -->
+    <section class="payment-support-section" id="payment-info">
+      <div class="container">
+        <!-- Main Info Card -->
+        <div class="payment-support-card">
+          <!-- Section Title -->
+          <h2 class="payment-section-title">Payment & Support Information</h2>
+
+          <!-- ALL THREE BOXES IN ONE ROW -->
+          <div class="row g-0">
+            <!-- Store Hours Column -->
+            <div class="col-lg-4 col-md-12">
+              <div class="info-box store-hours-box">
+                <div class="info-header">
+                  <i class="fas fa-clock"></i>
+                  <h3>Store Hours</h3>
+                </div>
+                <div class="info-content">
+                  <div class="store-time">
+                    <span class="time-highlight">6:00 AM - 10:00 PM</span>
+                  </div>
+                  <p class="info-description">
+                    We're open every day including weekends and holidays.
+                  </p>
+                  <p class="info-note">
+                    Orders placed outside store hours will be processed the next
+                    day.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Divider Line -->
+            <div class="vertical-divider d-none d-lg-block"></div>
+
+            <!-- eZcash Payment Column -->
+            <div class="col-lg-4 col-md-12">
+              <div class="info-box ezcash-box">
+                <div class="info-header">
+                  <i class="fas fa-wallet"></i>
+                  <h3>eZcash Payment</h3>
+                  <span class="recommended-badge">Recommended</span>
+                </div>
+                <div class="info-content">
+                  <p class="payment-description">
+                    Fast payment processing with eZcash! Send payment to either
+                    of our eZcash numbers:
+                  </p>
+
+                  <!-- eZcash Numbers -->
+                  <div class="payment-numbers">
+                    <div class="payment-number-item">
+                      <i class="fas fa-info-circle"></i>
+                      <span class="number">0773043667</span>
+                      <button class="btn-copy" data-copy="0773043667">
+                        <i class="fas fa-copy"></i>
+                      </button>
+                    </div>
+
+                    <div class="payment-number-item">
+                      <i class="fas fa-info-circle"></i>
+                      <span class="number">04741880764</span>
+                      <button class="btn-copy" data-copy="04741880764">
+                        <i class="fas fa-copy"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Bank Payment Details -->
+                  <div class="bank-accounts mt-3">
+                    <h4 style="color: #10b981; font-weight:600; margin-bottom:8px;">Bank Transfer (Optional)</h4>
+
+                    <!-- BOC Bank -->
+                    <div class="bank-details p-2 mb-2" style="background: rgba(255,255,255,0.03); border-radius: 8px;">
+                      <div class="d-flex justify-content-between align-items-center mb-1">
+                        <span style="color: #94a3b8; font-size: 0.85rem;">Bank Name:</span>
+                        <span style="color: #fff; font-weight: 600;">BOC Bank</span>
+                      </div>
+                      <div class="d-flex justify-content-between align-items-center mb-1">
+                        <span style="color: #94a3b8; font-size: 0.85rem;">Account Number:</span>
+                        <span style="color: #fff; font-weight: 600;">86800581</span>
+                      </div>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <span style="color: #94a3b8; font-size: 0.85rem;">Account Holder:</span>
+                        <span style="color: #fff; font-weight: 600;">KWA Rasanga</span>
+                      </div>
+                    </div>
+
+                    <!-- Sampath Bank -->
+                    <div class="bank-details p-2" style="background: rgba(255,255,255,0.03); border-radius: 8px;">
+                      <div class="d-flex justify-content-between align-items-center mb-1">
+                        <span style="color: #94a3b8; font-size: 0.85rem;">Bank Name:</span>
+                        <span style="color: #fff; font-weight: 600;">Sampath Bank</span>
+                      </div>
+                      <div class="d-flex justify-content-between align-items-center mb-1">
+                        <span style="color: #94a3b8; font-size: 0.85rem;">Account Number:</span>
+                        <span style="color: #fff; font-weight: 600;">115857695088</span>
+                      </div>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <span style="color: #94a3b8; font-size: 0.85rem;">Account Holder:</span>
+                        <span style="color: #fff; font-weight: 600;">KWA Rasanga</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Divider Line -->
+            <div class="vertical-divider d-none d-lg-block"></div>
+
+            <!-- Customer Support Column -->
+            <div class="col-lg-4 col-md-12">
+              <div class="info-box support-box">
+                <div class="info-header">
+                  <i class="fas fa-headset"></i>
+                  <h3>Customer Support</h3>
+                </div>
+                <div class="info-content">
+                  <p class="support-description">
+                    ඔබ මිලදී ගත් Product එකේ යෝ Quantity වල ගැටලුවක් ඇත්නම් යෝ
+                    කෙළෙස් යෝ එක කොළඹවෙන් නම් අපගේ WhatsApp number එකට message
+                    එක එවීමෙන් Check කර ගත හැකිය.
+                  </p>
+
+                  <!-- WhatsApp Contact Button -->
+                  <a
+                    href="https://wa.me/94773043667"
+                    class="btn-whatsapp"
+                    target="_blank"
+                  >
+                    <i class="fab fa-whatsapp"></i>
+                    <span>+94 77 304 3667</span>
+                  </a>
+
+                  <!-- Additional Support Info -->
+                  <div class="support-features">
+                    <div class="support-feature-item">
+                      <i class="fas fa-check-circle"></i>
+                      <span>24/7 Support Available</span>
+                    </div>
+                    <div class="support-feature-item">
+                      <i class="fas fa-check-circle"></i>
+                      <span>Quick Response Time</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End of row - ALL THREE BOXES MUST BE IN THIS ROW -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+
+    <!-- Footer (Optional) -->
+    <footer class="footer-section">
+      <div class="container">
+        <div class="row">
+          <!-- Footer Info -->
+          <div class="col-md-4 mb-4">
+            <h5 class="footer-title">SL Gaming Hub</h5>
+            <p class="footer-text">
+              Your trusted source for gaming top-ups in Sri Lanka. Fast, secure,
+              and reliable service 24/7.
+            </p>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <div class="row align-items-center">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+              <p class="copyright-text">
+                &copy; 2025 SL Gaming Hub. All Rights Reserved.
+              </p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+              <div class="footer-social">
+                <a
+                  href="https://www.facebook.com/slgaminghub"
+                  target="_blank"
+                  aria-label="Facebook"
+                >
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a
+                  href="https://wa.me/94773043667"
+                  target="_blank"
+                  aria-label="WhatsApp"
+                >
+                  <i class="fab fa-whatsapp"></i>
+                </a>
+                <a
+                  href="https://www.instagram.com/slgaminghub"
+                  target="_blank"
+                  aria-label="Instagram"
+                >
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a
+                  href="https://twitter.com/slgaminghub"
+                  target="_blank"
+                  aria-label="Twitter"
+                >
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="./assets/script.js"></script>
+    <script>
+      // Update nav login link to logout when authenticated
+      (function () {
+        try {
+          const navLink = document.getElementById('navAuthLink');
+          const userItem = document.getElementById('navUserItem');
+          const userBadge = document.getElementById('navUserBadge');
+          function applyAuth(user) {
+            if (user) {
+              // show username badge and make navLink a logout
+              if (userItem) userItem.classList.remove('d-none');
+              if (userBadge) userBadge.textContent = user.username || user.email || 'User';
+              if (navLink) {
+                navLink.textContent = 'Logout';
+                navLink.href = '#';
+                navLink.onclick = function (e) { e.preventDefault(); window.SLGAuth.logout(); };
+              }
+              // brand -> home when logged in
+              try { const brand = document.querySelector('.navbar-brand'); if (brand) brand.href = 'index.html'; } catch(e) {}
+            } else {
+              if (userItem) userItem.classList.add('d-none');
+              if (navLink) {
+                navLink.textContent = 'Login';
+                navLink.href = 'login.html';
+                navLink.onclick = null;
+              }
+              // brand -> login when not logged in
+              try { const brand = document.querySelector('.navbar-brand'); if (brand) brand.href = 'login.html?redirect=index.html'; } catch(e) {}
+            }
+          }
+
+          // Try to use SLGAuth if available
+          if (window.SLGAuth) {
+            applyAuth(SLGAuth.getAuthUser());
+          } else {
+            // fallback to localStorage
+            try {
+              const v = localStorage.getItem('slg_authenticated');
+              applyAuth(v ? JSON.parse(v) : null);
+            } catch (e) { applyAuth(null); }
+          }
+        } catch (err) {
+          /* ignore */
+        }
+      })();
+    </script>
+  </body>
+</html>
