@@ -110,6 +110,11 @@
               </div>
               <h3 class="package-name">Weekly</h3>
               <p class="package-price">Rs.700.00</p>
+              <div class="quantity-controls">
+                <button class="quantity-btn minus-btn">-</button>
+                <input type="number" class="quantity-input" value="1" min="1" max="100">
+                <button class="quantity-btn plus-btn">+</button>
+              </div>
               <button class="btn-order">Order Now</button>
             </div>
           </div>
@@ -129,6 +134,11 @@
               </div>
               <h3 class="package-name">Monthly Membership</h3>
               <p class="package-price">Rs.1900.00</p>
+              <div class="quantity-controls">
+                <button class="quantity-btn minus-btn">-</button>
+                <input type="number" class="quantity-input" value="1" min="1" max="100">
+                <button class="quantity-btn plus-btn">+</button>
+              </div>
               <button class="btn-order">Order Now</button>
             </div>
           </div>
@@ -145,6 +155,11 @@
               </div>
               <h3 class="package-name">Diamond x 5</h3>
               <p class="package-price">Rs.21.00</p>
+              <div class="quantity-controls">
+                <button class="quantity-btn minus-btn">-</button>
+                <input type="number" class="quantity-input" value="1" min="1" max="100">
+                <button class="quantity-btn plus-btn">+</button>
+              </div>
               <button class="btn-order">Order Now</button>
             </div>
           </div>
@@ -161,6 +176,11 @@
               </div>
               <h3 class="package-name">Diamond x 50</h3>
               <p class="package-price">Rs.170.00</p>
+              <div class="quantity-controls">
+                <button class="quantity-btn minus-btn">-</button>
+                <input type="number" class="quantity-input" value="1" min="1" max="100">
+                <button class="quantity-btn plus-btn">+</button>
+              </div>
               <button class="btn-order">Order Now</button>
             </div>
           </div>
@@ -177,6 +197,11 @@
               </div>
               <h3 class="package-name">Diamond x 70</h3>
               <p class="package-price">Rs.235.00</p>
+              <div class="quantity-controls">
+                <button class="quantity-btn minus-btn">-</button>
+                <input type="number" class="quantity-input" value="1" min="1" max="100">
+                <button class="quantity-btn plus-btn">+</button>
+              </div>
               <button class="btn-order">Order Now</button>
             </div>
           </div>
@@ -193,6 +218,11 @@
               </div>
               <h3 class="package-name">Diamond x 140</h3>
               <p class="package-price">Rs.460.00</p>
+              <div class="quantity-controls">
+                <button class="quantity-btn minus-btn">-</button>
+                <input type="number" class="quantity-input" value="1" min="1" max="100">
+                <button class="quantity-btn plus-btn">+</button>
+              </div>
               <button class="btn-order">Order Now</button>
             </div>
           </div>
@@ -209,6 +239,11 @@
               </div>
               <h3 class="package-name">Diamond x 355</h3>
               <p class="package-price">Rs.1160.00</p>
+              <div class="quantity-controls">
+                <button class="quantity-btn minus-btn">-</button>
+                <input type="number" class="quantity-input" value="1" min="1" max="100">
+                <button class="quantity-btn plus-btn">+</button>
+              </div>
               <button class="btn-order">Order Now</button>
             </div>
           </div>
@@ -225,6 +260,11 @@
               </div>
               <h3 class="package-name">Diamond x 720</h3>
               <p class="package-price">Rs.2300.00</p>
+              <div class="quantity-controls">
+                <button class="quantity-btn minus-btn">-</button>
+                <input type="number" class="quantity-input" value="1" min="1" max="100">
+                <button class="quantity-btn plus-btn">+</button>
+              </div>
               <button class="btn-order">Order Now</button>
             </div>
           </div>
@@ -241,6 +281,11 @@
               </div>
               <h3 class="package-name">Diamond x 7290</h3>
               <p class="package-price">Rs.23000.00</p>
+              <div class="quantity-controls">
+                <button class="quantity-btn minus-btn">-</button>
+                <input type="number" class="quantity-input" value="1" min="1" max="100">
+                <button class="quantity-btn plus-btn">+</button>
+              </div>
               <button class="btn-order">Order Now</button>
             </div>
           </div>
@@ -260,6 +305,11 @@
               </div>
               <h3 class="package-name">Diamond x 36500</h3>
               <p class="package-price">Rs.98000.00</p>
+              <div class="quantity-controls">
+                <button class="quantity-btn minus-btn">-</button>
+                <input type="number" class="quantity-input" value="1" min="1" max="100">
+                <button class="quantity-btn plus-btn">+</button>
+              </div>
               <button class="btn-order">Order Now</button>
             </div>
           </div>
@@ -279,6 +329,11 @@
               </div>
               <h3 class="package-name">Diamond x 73100</h3>
               <p class="package-price">Rs.194700.00</p>
+              <div class="quantity-controls">
+                <button class="quantity-btn minus-btn">-</button>
+                <input type="number" class="quantity-input" value="1" min="1" max="100">
+                <button class="quantity-btn plus-btn">+</button>
+              </div>
               <button class="btn-order">Order Now</button>
             </div>
           </div>
@@ -616,14 +671,16 @@
             e.preventDefault();
 
             const packageName = card.getAttribute("data-package");
-            const packagePrice = card.getAttribute("data-price");
+            const basePrice = parseFloat(card.getAttribute("data-price"));
+            const quantity = card.querySelector(".quantity-input").value;
+            const totalPrice = basePrice * quantity;
 
             document.getElementById("selectedPackageName").textContent =
-              packageName;
+              `${packageName} x${quantity}`;
             document.getElementById("selectedPackagePrice").textContent =
-              "Rs." + packagePrice;
-            document.getElementById("packageName").value = packageName;
-            document.getElementById("packagePrice").value = packagePrice;
+              "Rs." + totalPrice.toFixed(2);
+            document.getElementById("packageName").value = `${packageName} x${quantity}`;
+            document.getElementById("packagePrice").value = totalPrice.toFixed(2);
 
             // Generate Order ID and Date
             const orderId = "FFSG" + Date.now().toString().slice(-8);
@@ -633,7 +690,7 @@
             document.getElementById("orderDate").value = orderDate;
             document.getElementById(
               "emailSubject"
-            ).value = `Order ${orderId} - Free Fire (SG) - ${packageName}`;
+            ).value = `Order ${orderId} - Free Fire (Indonesia) - ${packageName}`;
 
             orderModal.show();
           });
@@ -687,10 +744,10 @@
 
           // Create WhatsApp message
           const messageText =
-            `🎮 *New Order - Free Fire (SG)*\n\n` +
+            `🎮 *New Order - Free Fire (Indonesia)*\n\n` +
             `📋 *Order ID:* ${data.orderId}\n` +
             `📦 *Package:* ${data.packageName}\n` +
-            `💰 *Price:* Rs.${data.packagePrice}\n\n` +
+            `💰 *Total Price:* Rs.${data.packagePrice}\n\n` +
             `👤 *Customer Details:*\n` +
             `🎯 Game ID: ${data.gameId}\n` +
             `👨 Username: ${data.username}\n` +
@@ -844,6 +901,7 @@
     <!-- Custom JS -->
     <script src="script.js"></script>
     <script src="freefire-sg.js"></script>
+    <script src="./assets/quantity-controls.js"></script>
     <script>
       (function () {
         try {
